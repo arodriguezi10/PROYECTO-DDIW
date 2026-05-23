@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión - FYLIOS</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+<link rel="stylesheet" href="../css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="theme-dark">
+    <div class="language-selector-top">
+      <select id="language-select">
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="pt">Português</option>
+      </select>
+    </div>
+    <main class="login-layout">
+      <div class="login-card">
+        <header class="login-header">
+          <div class="logo-group">
+            <span class="logo-box">F</span>
+            <h2>FYLIOS</h2>
+          </div>
+          <a href="../index.html" class="link-back" data-i18n="back">Back</a>
+        </header>
+
+        <div class="login-titles">
+          <span class="badge">
+            <i class="fa-solid fa-shield-halved"></i> <span data-i18n="secureAccess">Acceso seguro</span>
+          </span>
+          <h1 class="title" data-i18n="welcome_html">
+            Bienvenido de <span class="text-accent">vuelta</span>
+          </h1>
+          <p class="subtitle" data-i18n="subtitle">Inicia sesión para continuar donde lo dejaste</p>
+        </div>
+
+        <form class="login-form" action="#" method="POST">
+          <div class="input-group">
+            <label for="email" data-i18n="email">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="email@ejemplo.com"
+              data-i18n-placeholder="emailPlaceholder"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="password" data-i18n="password">Contraseña</label>
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="password"
+                placeholder="Tu contraseña"
+                data-i18n-placeholder="passwordPlaceholder"
+                required
+              />
+              <button
+                type="button"
+                class="btn-toggle-pass"
+                aria-label="Mostrar contraseña"
+                data-i18n-aria="showPassword"
+              >
+                <i class="fa-solid fa-eye-slash"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-options">
+            <label class="checkbox-container">
+              <input type="checkbox" class="custom-checkbox" />
+              <span class="checkbox-text" data-i18n="rememberMe">Recuérdame</span>
+            </label>
+            <a href="#" class="link-forgot" data-i18n="forgotPassword">¿Olvidaste la contraseña?</a>
+          </div>
+
+          <button type="submit" class="btn-submit" data-i18n="submitButton">Iniciar sesión</button>
+
+          <div class="divider">
+            <span data-i18n="orContinueWith">o continúa con</span>
+          </div>
+
+          <div class="social-login">
+            <button type="button" class="btn-social">
+              <i class="fa-brands fa-google"></i> <span data-i18n="googleBtn">Google</span>
+            </button>
+            <button type="button" class="btn-social">
+              <i class="fa-brands fa-apple"></i> <span data-i18n="appleBtn">Apple</span>
+            </button>
+          </div>
+        </form>
+
+        <footer class="login-footer">
+          <p data-i18n="footer_html">
+            ¿No tienes cuenta?
+            <a href="#" class="link-register">Regístrate gratis</a>
+          </p>
+        </footer>
+      </div>
+    </main>
+
+    <script>
+      const translations = {
+        es: {
+          back: "Back",
+          secureAccess: "Acceso seguro",
+          welcome_html: "Bienvenido de <span class=\"text-accent\">vuelta</span>",
+          subtitle: "Inicia sesión para continuar donde lo dejaste",
+          email: "Correo electrónico",
+          emailPlaceholder: "email@ejemplo.com",
+          password: "Contraseña",
+          passwordPlaceholder: "Tu contraseña",
+          showPassword: "Mostrar contraseña",
+          rememberMe: "Recuérdame",
+          forgotPassword: "¿Olvidaste la contraseña?",
+          submitButton: "Iniciar sesión",
+          orContinueWith: "o continúa con",
+          googleBtn: "Google",
+          appleBtn: "Apple",
+          footer_html: "¿No tienes cuenta? <a href=\"#\" class=\"link-register\">Regístrate gratis</a>",
+        },
+        fr: {
+          back: "Retour",
+          secureAccess: "Accès sécurisé",
+          welcome_html: "Bienvenue <span class=\"text-accent\">de retour</span>",
+          subtitle: "Connectez-vous pour continuer où vous l'aviez laissé",
+          email: "Adresse email",
+          emailPlaceholder: "email@exemple.com",
+          password: "Mot de passe",
+          passwordPlaceholder: "Votre mot de passe",
+          showPassword: "Afficher le mot de passe",
+          rememberMe: "Se souvenir de moi",
+          forgotPassword: "Mot de passe oublié ?",
+          submitButton: "Se connecter",
+          orContinueWith: "ou continuez avec",
+          googleBtn: "Google",
+          appleBtn: "Apple",
+          footer_html: "Vous n'avez pas de compte ? <a href=\"#\" class=\"link-register\">S'inscrire gratuitement</a>",
+        },
+        pt: {
+          back: "Voltar",
+          secureAccess: "Acesso seguro",
+          welcome_html: "Bem-vindo <span class=\"text-accent\">de volta</span>",
+          subtitle: "Faça login para continuar de onde parou",
+          email: "Endereço de email",
+          emailPlaceholder: "email@exemplo.com",
+          password: "Senha",
+          passwordPlaceholder: "Sua senha",
+          showPassword: "Mostrar senha",
+          rememberMe: "Lembrar-me",
+          forgotPassword: "Esqueceu a senha?",
+          submitButton: "Entrar",
+          orContinueWith: "ou continue com",
+          googleBtn: "Google",
+          appleBtn: "Apple",
+          footer_html: "Não tem uma conta? <a href=\"#\" class=\"link-register\">Registre-se gratuitamente</a>",
+        },
+      };
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const languageSelect = document.getElementById("language-select");
+        const htmlElement = document.documentElement;
+
+        // 1. Inicializar
+        const savedLanguage = localStorage.getItem("selectedLanguage") || "es";
+        languageSelect.value = savedLanguage;
+        applyLanguage(savedLanguage);
+
+        // 2. Escuchar cambios locales
+        languageSelect.addEventListener("change", (e) => {
+          const lang = e.target.value;
+          localStorage.setItem("selectedLanguage", lang);
+          applyLanguage(lang);
+        });
+
+        // 3. Sincronización multi-pestaña
+        window.addEventListener("storage", (e) => {
+          if (e.key === "selectedLanguage") {
+            languageSelect.value = e.newValue;
+            applyLanguage(e.newValue);
+          }
+        });
+
+        // 4. Aplicar traducciones
+        function applyLanguage(lang) {
+          htmlElement.lang = lang;
+          const dict = translations[lang];
+
+          // Textos e HTML
+          document.querySelectorAll("[data-i18n]").forEach((el) => {
+            const key = el.getAttribute("data-i18n");
+            if (dict[key]) el.innerHTML = dict[key];
+          });
+
+          // Placeholders de Inputs
+          document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+            const key = el.getAttribute("data-i18n-placeholder");
+            if (dict[key]) el.placeholder = dict[key];
+          });
+
+          // Aria-labels (Accesibilidad)
+          document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+            const key = el.getAttribute("data-i18n-aria");
+            if (dict[key]) el.setAttribute("aria-label", dict[key]);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

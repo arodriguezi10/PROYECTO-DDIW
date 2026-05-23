@@ -1,0 +1,401 @@
+/* Variables del Sistema de Diseño */
+:root {
+  /* Tipografía */
+  --font-heading: "Syne", sans-serif;
+  --font-subheading: "DM Sans", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Tema Principal (Fondo claro, Tarjetas Blancas) */
+  --color-background: #f4f7fe;
+  --color-surface: #ffffff;
+  --color-surf: #edf2f7;
+
+  /* Navbar (Azul Oscuro) - No se usa en login pero se mantiene en la paleta global */
+  --color-navbar-bg: #0b1437;
+  --color-navbar-text: #ffffff;
+  --color-navbar-text-low: #a3aed0;
+
+  /* Textos (Negro / Gris) */
+  --color-text-high: #1b2559;
+  --color-text-low: #707eae;
+
+  /* Botones y Acentos */
+  --color-primary: #4318ff; /* Morado */
+  --color-accent1: #764ba2; /* Azul */
+  --color-accent1-hover: #5d3a81;
+
+  /* Estados (Verde, Rojo) */
+  --color-green: #05cd99;
+  --color-green-bg1: #e6faf5;
+  --color-red: #ee5d50;
+
+  /* Espaciado y Radios Base */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-high);
+  /* Fondo claro limpio */
+  background-color: var(--color-background);
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* -------------------------------------
+   LAYOUT PRINCIPAL CENTRADO
+   ------------------------------------- */
+.login-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+/* -------------------------------------
+   TARJETA DEL FORMULARIO
+   ------------------------------------- */
+.login-card {
+  background-color: var(--color-surface);
+  width: 100%;
+  max-width: 440px;
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(112, 126, 174, 0.1);
+  /* Sombra suave y amplia para fondos claros */
+  box-shadow: 0 20px 40px rgba(11, 20, 55, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+/* -------------------------------------
+   CABECERA Y TÍTULOS
+   ------------------------------------- */
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text-high);
+}
+
+.logo-box {
+  background-color: var(--color-primary);
+  color: #fff;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-surf);
+  color: var(--color-primary);
+  font-family: var(--font-subheading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  color: var(--color-text-high);
+}
+
+.text-accent {
+  color: var(--color-accent1); /* Azul para la palabra destacada */
+}
+
+.subtitle {
+  font-family: var(--font-subheading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-low);
+  margin-bottom: 2rem;
+}
+
+/* -------------------------------------
+   FORMULARIO E INPUTS
+   ------------------------------------- */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-family: var(--font-subheading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-high);
+}
+
+.input-group input {
+  background-color: var(--color-surf);
+  border: 1px solid transparent;
+  color: var(--color-text-high);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input-group input::placeholder {
+  color: var(--color-text-low);
+}
+
+.input-group input:focus {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface);
+  box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 3rem;
+}
+
+.btn-toggle-pass {
+  position: absolute;
+  right: 1rem;
+  color: var(--color-text-low);
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.btn-toggle-pass:hover {
+  color: var(--color-text-high);
+}
+
+/* Opciones: Checkbox y Forgot Password */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.checkbox-text {
+  font-size: 0.9rem;
+  color: var(--color-text-low);
+  font-weight: 600;
+}
+
+.link-forgot {
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.link-forgot:hover {
+  color: var(--color-accent1-hover);
+}
+
+/* Botón de Enviar */
+.btn-submit {
+  background-color: var(--color-primary); /* Morado */
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  padding: 1.1rem;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(118, 75, 162, 0.2);
+}
+
+.btn-submit:hover {
+  background-color: var(--color-accent1-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(118, 75, 162, 0.3);
+}
+
+/* -------------------------------------
+   SOCIAL LOGIN Y FOOTER
+   ------------------------------------- */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--color-text-low);
+  font-size: 0.85rem;
+  margin: 1.25rem 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid rgba(112, 126, 174, 0.2);
+}
+
+.divider span {
+  padding: 0 1rem;
+}
+
+.social-login {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-social {
+  flex: 1;
+  background-color: var(--color-surface);
+  color: var(--color-text-high);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.9rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid var(--color-surf);
+  box-shadow: 0 2px 6px rgba(11, 20, 55, 0.02);
+  transition: all 0.2s;
+}
+
+.btn-social:hover {
+  background-color: var(--color-surf);
+  border-color: rgba(112, 126, 174, 0.3);
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: var(--color-text-low);
+}
+
+.link-register {
+  color: var(--color-accent1); /* Azul */
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.link-register:hover {
+  color: var(--color-primary); /* Cambia a morado al hacer hover */
+}
+
+/* =========================================
+   RESPONSIVE: ESCRITORIO
+   ========================================= */
+@media (min-width: 1024px) {
+  .login-card {
+    padding: 3.5rem 3rem;
+    max-width: 480px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.language-selector-top select {
+  padding: 0.6rem 1rem;
+  background-color: rgba(11, 20, 55, 0.05);
+  border: 1px solid rgba(11, 20, 55, 0.1);
+  border-radius: var(--radius-md);
+  color: var(--color-text-high);
+  font-family: var(--font-subheading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  appearance: none;
+  /* Icono flecha oscuro para que contraste con el fondo claro */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%231B2559' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.language-selector-top select:hover {
+  background-color: rgba(11, 20, 55, 0.08);
+  border-color: rgba(11, 20, 55, 0.2);
+}
+
+.language-selector-top select:focus {
+  outline: none;
+  background-color: rgba(11, 20, 55, 0.1);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+}

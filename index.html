@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FYLIOS</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body class="theme-dark">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar__logo">
+        <div style="display: flex; align-items: center; gap: 0.5rem">
+          <img src="./assets/favicon.svg" alt="FYLIOS" style="width: 2.2rem; height: auto" />
+          <span>FYLIOS</span>
+        </div>
+      </div>
+      <div class="language-selector">
+        <select id="language-select">
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="pt">Português</option>
+        </select>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="index.html" class="sidebar__link sidebar__link--active">
+          <i class="fa-solid fa-house"></i> <span data-i18n="home">Home</span>
+        </a>
+        <a href="pages/routines.html" class="sidebar__link">
+          <i class="fa-solid fa-clipboard-list"></i>
+          <span data-i18n="routines">Rutinas</span>
+        </a>
+        <a href="#" class="sidebar__link">
+          <i class="fa-solid fa-chart-line"></i>
+          <span data-i18n="progression">Progresión</span>
+        </a>
+        <a href="#" class="sidebar__link">
+          <i class="fa-solid fa-comments"></i>
+          <span data-i18n="chat">Chat</span>
+        </a>
+        <a href="./pages/video.html" class="sidebar__link">
+          <i class="fa-solid fa-video"></i>
+          <span data-i18n="video">Video</span>
+        </a>
+
+        <div class="sidebar__user-group">
+          <button
+            type="button"
+            class="sidebar__link sidebar__link--user"
+            id="profile-menu-trigger"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="profile-menu"
+          >
+            <i class="fa-solid fa-user"></i>
+            <span data-i18n="profile">Perfil</span>
+          </button>
+
+          <div class="sidebar-dropdown" id="profile-menu" role="menu">
+            <a href="pages/profile.html" class="sidebar-dropdown__item" role="menuitem" data-i18n="personalData">Datos
+              personales</a>
+            <div class="sidebar-dropdown__divider" role="separator"></div>
+            <a href="pages/login.html" class="sidebar-dropdown__item sidebar-dropdown__item--danger" role="menuitem"
+              data-i18n="logout">Cerrar sesión</a>
+          </div>
+        </div>
+
+        <div class="sidebar__license" style="
+              margin-top: 1rem;
+              text-align: center;
+              font-size: 0.65rem;
+              color: var(--color-navbar-text-low);
+              padding: 0 1rem;
+            ">
+          <a href="https://github.com/arodriguezi10/DDIW/tree/main/proyecto-DDIW/tarea-final-t2-v2">FYLIOS</a>
+          © 2026 by
+          <a href="https://github.com/arodriguezi10">Alejandro</a> is licensed
+          under
+          <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
+          <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""
+            style="max-width: 1em; max-height: 1em; margin-left: 0.2em" />
+          <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""
+            style="max-width: 1em; max-height: 1em; margin-left: 0.2em" />
+          <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt=""
+            style="max-width: 1em; max-height: 1em; margin-left: 0.2em" />
+          <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" alt=""
+            style="max-width: 1em; max-height: 1em; margin-left: 0.2em" />
+        </div>
+      </nav>
+    </aside>
+
+    <main class="dashboard">
+      <section class="dashboard__section dashboard__header">
+        <p class="text-caption" data-i18n="date">viernes, 12 de febrero</p>
+        <div class="header-row">
+          <h1 class="title-main" data-i18n="greeting_html">
+            Hola,<br />
+            <span class="text-accent">usuario</span>
+          </h1>
+          <a href="./pages/login.html" class="btn-profile" aria-label="Perfil">
+            U
+          </a>
+        </div>
+      </section>
+
+      <div class="dashboard__content">
+        <!--bootraps-->
+        <div class="alert alert-primary alert-dismissible fade show d-flex align-items-center" role="alert"
+          style="border-radius: var(--radius-xl); margin-bottom: 1rem">
+          <i class="fa-solid fa-circle-info me-2"></i>
+          <div>
+            <strong data-i18n="bootstrap_alert_title">¡Nueva rutina disponible!</strong>
+            <span data-i18n="bootstrap_alert_body">Revisa tu plan de entrenamiento para ver los cambios.</span>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div class="dashboard__main">
+          <section class="dashboard__section dashboard__progression">
+            <div class="section-header">
+              <h2 class="title-section" data-i18n="week">
+                SEMANA 1 (PROGRESIÓN)
+              </h2>
+              <a href="#" class="link-primary" data-i18n="seeAll">Ver todo ></a>
+            </div>
+
+            <article class="card">
+              <div class="card__header">
+                <p class="tag-uppercase" data-i18n="phase">
+                  HIPERTROFIA FASE 1
+                </p>
+                <div class="nav-controls">
+                  <button class="btn-nav btn-nav--disabled" disabled>
+                    &larr;
+                  </button>
+                  <button class="btn-nav">&rarr;</button>
+                </div>
+              </div>
+
+              <div class="calendar-week">
+                <div class="calendar-day">
+                  <span class="day-name" data-i18n="day_0">L</span>
+                  <div class="day-number day-number--completed">10</div>
+                  <i class="fa-solid fa-check icon-status icon-status--check"></i>
+                </div>
+                <div class="calendar-day">
+                  <span class="day-name" data-i18n="day_1">M</span>
+                  <div class="day-number day-number--completed">11</div>
+                  <i class="fa-solid fa-check icon-status icon-status--check"></i>
+                </div>
+                <div class="calendar-day">
+                  <span class="day-name" data-i18n="day_2">X</span>
+                  <div class="day-number day-number--today">12</div>
+                  <i class="fa-regular fa-circle-dot icon-status icon-status--pending"></i>
+                </div>
+                <div class="calendar-day">
+                  <span class="day-name" data-i18n="day_3">J</span>
+                  <div class="day-number">13</div>
+                  <i class="fa-solid fa-bed icon-status icon-status--rest"></i>
+                </div>
+                <div class="calendar-day">
+                  <span class="day-name" data-i18n="day_4">V</span>
+                  <div class="day-number">14</div>
+                  <i class="fa-solid fa-dumbbell icon-status icon-status--pending"></i>
+                </div>
+                <div class="calendar-day">
+                  <span class="day-name" data-i18n="day_5">S</span>
+                  <div class="day-number">15</div>
+                  <i class="fa-solid fa-bed icon-status icon-status--rest"></i>
+                </div>
+                <div class="calendar-day">
+                  <span class="day-name" data-i18n="day_6">D</span>
+                  <div class="day-number">16</div>
+                  <i class="fa-regular fa-circle-dot icon-status icon-status--pending"></i>
+                </div>
+              </div>
+            </article>
+
+            <article class="card card--highlight mt-sm">
+              <div class="card__header">
+                <div class="routine-info">
+                  <div class="routine-icon">1</div>
+                  <div>
+                    <p class="text-caption" data-i18n="routineDay">Mié 12</p>
+                    <h3 class="title-sub" data-i18n="routineName">
+                      Empuje Pesado
+                    </h3>
+                  </div>
+                </div>
+                <button class="btn-close"></button>
+              </div>
+              <div class="tags-row">
+                <span class="tag" data-i18n="exercises">6 ejercicios</span>
+                <span class="tag" data-i18n="duration">50 min</span>
+              </div>
+              <button class="btn btn--primary btn--full" data-i18n="startTraining">
+                Empezar entrenamiento
+              </button>
+            </article>
+          </section>
+
+          <section class="dashboard__section dashboard__history">
+            <div class="section-header">
+              <h2 class="title-section" data-i18n="history">
+                HISTORIAL SEMANAL
+              </h2>
+              <a href="#" class="link-primary" data-i18n="seeAllHistory">Ver todo ></a>
+            </div>
+            <article class="card">
+              <p class="tag-uppercase mb-md" data-i18n="month">
+                FEBRERO 2026
+              </p>
+              <div class="calendar-history">
+                <div class="history-day">
+                  <span class="day-name" data-i18n="day_0">L</span>
+                  <div class="day-box day-box--completed">9</div>
+                  <span class="day-status">-</span>
+                </div>
+                <div class="history-day">
+                  <span class="day-name" data-i18n="day_1">M</span>
+                  <div class="day-box day-box--completed">10</div>
+                  <span class="day-status">-</span>
+                </div>
+                <div class="history-day">
+                  <span class="day-name" data-i18n="day_2">X</span>
+                  <div class="day-box day-box--today">11</div>
+                  <span class="day-status">-</span>
+                </div>
+                <div class="history-day">
+                  <span class="day-name" data-i18n="day_3">J</span>
+                  <div class="day-box day-box--empty">12</div>
+                  <span class="day-status">-</span>
+                </div>
+                <div class="history-day">
+                  <span class="day-name" data-i18n="day_4">V</span>
+                  <div class="day-box day-box--empty">13</div>
+                  <span class="day-status">-</span>
+                </div>
+                <div class="history-day">
+                  <span class="day-name" data-i18n="day_5">S</span>
+                  <div class="day-box day-box--empty">14</div>
+                  <span class="day-status">-</span>
+                </div>
+                <div class="history-day">
+                  <span class="day-name" data-i18n="day_6">D</span>
+                  <div class="day-box day-box--empty">15</div>
+                  <span class="day-status">-</span>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+
+        <div class="dashboard__widgets">
+          <section class="dashboard__section dashboard__habits">
+            <h2 class="title-section" data-i18n="habits">
+              ¿TODO MARCADO HOY?
+            </h2>
+            <div class="habits-grid">
+              <label class="card card--habit card--habit-active">
+                <input type="checkbox" checked class="habit-checkbox" />
+                <div class="habit-info">
+                  <p class="habit-title text-accent" data-i18n="preWorkout">
+                    Pre-entreno
+                  </p>
+                  <p class="habit-desc" data-i18n="carbs">Carbohidratos</p>
+                </div>
+              </label>
+              <label class="card card--habit">
+                <input type="checkbox" class="habit-checkbox" />
+                <div class="habit-info">
+                  <p class="habit-title" data-i18n="postWorkout">
+                    Post-entreno
+                  </p>
+                  <p class="habit-desc" data-i18n="protein">Proteína</p>
+                </div>
+              </label>
+            </div>
+          </section>
+
+          <section class="dashboard__section dashboard__weight">
+            <div class="section-header">
+              <h2 class="title-section" data-i18n="weight">PESO DE HOY</h2>
+              <a href="#" class="link-primary" data-i18n="historyWeight">Historial ></a>
+            </div>
+            <article class="card">
+              <div class="card__header mb-md">
+                <p class="tag-uppercase" data-i18n="weightToday">
+                  PESO DEL DÍA HOY
+                </p>
+                <button class="btn-add">+</button>
+              </div>
+
+              <div class="weight-display">
+                <div class="weight-value">
+                  <span class="weight-main">75</span>
+                  <span class="weight-decimal">,5</span>
+                  <span class="weight-unit">kg</span>
+                </div>
+                <div class="weight-change">
+                  <p class="change-val" data-i18n="weightChange">+1.2</p>
+                  <p class="change-unit" data-i18n="weightUnit">kg/mes</p>
+                </div>
+              </div>
+
+              <div class="badge-trend">
+                <span data-i18n="weightTrend">+0.3 kg esta semana</span>
+              </div>
+
+              <div class="fake-chart">
+                <div class="chart-col">
+                  <div class="chart-bar" style="height: 40%"></div>
+                  <span class="chart-day" data-i18n="day_0">L</span>
+                </div>
+                <div class="chart-col">
+                  <div class="chart-bar" style="height: 60%"></div>
+                  <span class="chart-day" data-i18n="day_1">M</span>
+                </div>
+                <div class="chart-col">
+                  <div class="chart-bar chart-bar--active" style="height: 100%"></div>
+                  <span class="chart-day" data-i18n="day_2">X</span>
+                </div>
+                <div class="chart-col">
+                  <div class="chart-bar" style="height: 0%"></div>
+                  <span class="chart-day" data-i18n="day_3">J</span>
+                </div>
+                <div class="chart-col">
+                  <div class="chart-bar" style="height: 0%"></div>
+                  <span class="chart-day" data-i18n="day_4">V</span>
+                </div>
+                <div class="chart-col">
+                  <div class="chart-bar" style="height: 0%"></div>
+                  <span class="chart-day" data-i18n="day_5">S</span>
+                </div>
+                <div class="chart-col">
+                  <div class="chart-bar" style="height: 0%"></div>
+                  <span class="chart-day" data-i18n="day_6">D</span>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const translations = {
+      es: {
+        home: "Home",
+        routines: "Rutinas",
+        progression: "Progresión",
+        chat: "Chat",
+        video: "Video",
+        profile: "Perfil",
+        personalData: "Datos personales",
+        logout: "Cerrar sesión",
+        date: "viernes, 12 de febrero",
+        greeting_html: 'Hola,<br /><span class="text-accent">usuario</span>',
+        week: "SEMANA 1 (PROGRESIÓN)",
+        seeAll: "Ver todo >",
+        seeAllHistory: "Ver todo >",
+        phase: "HIPERTROFIA FASE 1",
+        routineDay: "Mié 12",
+        routineName: "Empuje Pesado",
+        exercises: "6 ejercicios",
+        duration: "50 min",
+        startTraining: "Empezar entrenamiento",
+        history: "HISTORIAL SEMANAL",
+        month: "FEBRERO 2026",
+        habits: "¿TODO MARCADO HOY?",
+        preWorkout: "Pre-entreno",
+        carbs: "Carbohidratos",
+        postWorkout: "Post-entreno",
+        protein: "Proteína",
+        weight: "PESO DE HOY",
+        historyWeight: "Historial >",
+        weightToday: "PESO DEL DÍA HOY",
+        weightChange: "+1.2",
+        weightUnit: "kg/mes",
+        weightTrend: "+0.3 kg esta semana",
+        day_0: "L",
+        day_1: "M",
+        day_2: "X",
+        day_3: "J",
+        day_4: "V",
+        day_5: "S",
+        day_6: "D",
+        bootstrap_alert_title: "¡Nueva rutina disponible!",
+        bootstrap_alert_body:
+          "Revisa tu plan de entrenamiento para ver los cambios.",
+      },
+      fr: {
+        home: "Accueil",
+        routines: "Routines",
+        progression: "Progression",
+        chat: "Chat",
+        video: "Vidéo",
+        profile: "Profil",
+        personalData: "Données personnelles",
+        logout: "Se déconnecter",
+        date: "vendredi, 12 février",
+        greeting_html:
+          'Salut,<br /><span class="text-accent">utilisateur</span>',
+        week: "SEMAINE 1 (PROGRESSION)",
+        seeAll: "Voir tout >",
+        seeAllHistory: "Voir tout >",
+        phase: "HYPERTROPHIE PHASE 1",
+        routineDay: "Mer 12",
+        routineName: "Poussée Lourde",
+        exercises: "6 exercices",
+        duration: "50 min",
+        startTraining: "Commencer l'entraînement",
+        history: "HISTORIQUE HEBDOMADAIRE",
+        month: "FÉVRIER 2026",
+        habits: "TOUT COCHÉ AUJOURD'HUI ?",
+        preWorkout: "Pré-entraînement",
+        carbs: "Glucides",
+        postWorkout: "Post-entraînement",
+        protein: "Protéine",
+        weight: "POIDS D'AUJOURD'HUI",
+        historyWeight: "Historique >",
+        weightToday: "POIDS DU JOUR AUJOURD'HUI",
+        weightChange: "+1.2",
+        weightUnit: "kg/mois",
+        weightTrend: "+0.3 kg cette semaine",
+        day_0: "L",
+        day_1: "M",
+        day_2: "M",
+        day_3: "J",
+        day_4: "V",
+        day_5: "S",
+        day_6: "D",
+        bootstrap_alert_title: "Nouvelle routine disponible !",
+        bootstrap_alert_body:
+          "Consultez votre plan d'entraînement pour voir les changements.",
+      },
+      pt: {
+        home: "Início",
+        routines: "Rotinas",
+        progression: "Progressão",
+        chat: "Chat",
+        video: "Vídeo",
+        profile: "Perfil",
+        personalData: "Dados pessoais",
+        logout: "Sair",
+        date: "sexta-feira, 12 de fevereiro",
+        greeting_html: 'Olá,<br /><span class="text-accent">usuário</span>',
+        week: "SEMANA 1 (PROGRESSÃO)",
+        seeAll: "Ver tudo >",
+        seeAllHistory: "Ver tudo >",
+        phase: "HIPERTROFIA FASE 1",
+        routineDay: "Qua 12",
+        routineName: "Empurrão Pesado",
+        exercises: "6 exercícios",
+        duration: "50 min",
+        startTraining: "Começar treinamento",
+        history: "HISTÓRICO SEMANAL",
+        month: "FEVEREIRO 2026",
+        habits: "TUDO MARCADO HOJE?",
+        preWorkout: "Pré-treino",
+        carbs: "Carboidratos",
+        postWorkout: "Pós-treino",
+        protein: "Proteína",
+        weight: "PESO DE HOJE",
+        historyWeight: "Histórico >",
+        weightToday: "PESO DO DIA HOJE",
+        weightChange: "+1.2",
+        weightUnit: "kg/mês",
+        weightTrend: "+0.3 kg esta semana",
+        day_0: "S",
+        day_1: "T",
+        day_2: "Q",
+        day_3: "Q",
+        day_4: "S",
+        day_5: "S",
+        day_6: "D",
+        bootstrap_alert_title: "Nova rotina disponível!",
+        bootstrap_alert_body:
+          "Verifique seu plano de treino para ver as mudanças.",
+      },
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const languageSelect = document.getElementById("language-select");
+      const htmlElement = document.documentElement;
+      const profileGroup = document.querySelector(".sidebar__user-group");
+      const profileTrigger = document.getElementById("profile-menu-trigger");
+      const mobileNavQuery = window.matchMedia("(max-width: 1023px)");
+
+      function setProfileMenuOpen(open) {
+        if (!profileGroup || !profileTrigger) return;
+        profileGroup.classList.toggle("is-open", open);
+        profileTrigger.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+
+      profileTrigger?.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (mobileNavQuery.matches) {
+          setProfileMenuOpen(!profileGroup.classList.contains("is-open"));
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (profileGroup && !profileGroup.contains(event.target)) {
+          setProfileMenuOpen(false);
+        }
+      });
+
+      mobileNavQuery.addEventListener("change", () => setProfileMenuOpen(false));
+
+      // 1. Inicializar con idioma guardado
+      const savedLanguage = localStorage.getItem("selectedLanguage") || "es";
+      languageSelect.value = savedLanguage;
+      applyLanguage(savedLanguage);
+
+      // 2. Escuchar el cambio en el select
+      languageSelect.addEventListener("change", (e) => {
+        const lang = e.target.value;
+        localStorage.setItem("selectedLanguage", lang);
+        applyLanguage(lang);
+      });
+
+      // 3. Sincronización multi-pestaña (Si cambia en otra página, esta se actualiza sola)
+      window.addEventListener("storage", (e) => {
+        if (e.key === "selectedLanguage") {
+          languageSelect.value = e.newValue;
+          applyLanguage(e.newValue);
+        }
+      });
+
+      // 4. Lógica de renderizado usando atributos de datos
+      function applyLanguage(lang) {
+        htmlElement.lang = lang;
+        const dict = translations[lang];
+
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (dict[key]) {
+            // innerHTML permite insertar etiquetas como <br> y <span> definidas en el diccionario
+            el.innerHTML = dict[key];
+          }
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

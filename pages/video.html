@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reproductor de Vídeo - FYLIOS</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+<link rel="stylesheet" href="../css/routines.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="theme-light">
+    <div class="app-layout">
+      <aside class="sidebar">
+        <div class="sidebar__logo">
+          <div style="display: flex; align-items: center; gap: 0.5rem">
+            <img
+              src="../assets/favicon.svg"
+              alt="FYLIOS"
+              style="width: 2.2rem; height: auto"
+            />
+            <span>FYLIOS</span>
+          </div>
+        </div>
+        <div class="language-selector">
+          <select id="language-select">
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="pt">Português</option>
+          </select>
+        </div>
+        <nav class="sidebar__nav">
+          <a href="../index.html" class="sidebar__link">
+            <i class="fa-solid fa-house"></i> <span data-i18n="home">Home</span>
+          </a>
+          <a href="routines.html" class="sidebar__link">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <span data-i18n="routines">Rutinas</span>
+          </a>
+          <a href="#" class="sidebar__link">
+            <i class="fa-solid fa-chart-line"></i>
+            <span data-i18n="progression">Progresión</span>
+          </a>
+          <a href="#" class="sidebar__link">
+            <i class="fa-solid fa-comments"></i>
+            <span data-i18n="chat">Chat</span>
+          </a>
+          <a href="video.html" class="sidebar__link sidebar__link--active">
+            <i class="fa-solid fa-circle-play"></i>
+            <span data-i18n="video">Vídeo</span>
+          </a>
+          
+          <div class="sidebar__user-group">
+            <button
+              type="button"
+              class="sidebar__link sidebar__link--user"
+              id="profile-menu-trigger"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="profile-menu"
+            >
+              <i class="fa-solid fa-user"></i>
+              <span data-i18n="profile">Perfil</span>
+            </button>
+            <div class="sidebar-dropdown" id="profile-menu" role="menu">
+              <a
+                href="profile.html"
+                class="sidebar-dropdown__item"
+                role="menuitem"
+                data-i18n="personalData"
+                >Datos personales</a
+              >
+              <div class="sidebar-dropdown__divider" role="separator"></div>
+              <a
+                href="login.html"
+                class="sidebar-dropdown__item sidebar-dropdown__item--danger"
+                role="menuitem"
+                data-i18n="logout"
+                >Cerrar sesión</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="sidebar__license"
+            style="
+              margin-top: 1rem;
+              text-align: center;
+              font-size: 0.65rem;
+              color: var(--color-navbar-text-low);
+              padding: 0 1rem;
+            "
+          >
+            <a href="https://github.com/arodriguezi10/DDIW/tree/main/proyecto-DDIW/tarea-final-t2-v2" target="_blank">FYLIOS</a>
+            © 2026 by
+            <a href="https://github.com/arodriguezi10" target="_blank">Alejandro</a> is licensed
+            under
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>
+            <div style="margin-top: 0.3rem;">
+                <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em; max-height: 1em; margin-left: 0.2em" />
+                <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em; max-height: 1em; margin-left: 0.2em" />
+                <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em; max-height: 1em; margin-left: 0.2em" />
+                <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" alt="" style="max-width: 1em; max-height: 1em; margin-left: 0.2em" />
+            </div>
+          </div>
+        </nav>
+      </aside>
+
+      <main class="dashboard">
+        <header class="page-header">
+          <div class="header-titles">
+            <p class="text-caption" data-i18n="masterclass">Masterclass</p>
+            <h1 class="title-main" data-i18n="videoTitle">
+              Técnica de Peso Muerto
+            </h1>
+          </div>
+        </header>
+
+        <div class="video-layout-grid">
+          <div class="video-main-col">
+            <article class="card video-card">
+              <div class="video-player-wrapper">
+                <div class="video-placeholder">
+                  <video
+                    id="main-video"
+                    controls
+                    poster="../assets/miniatura-video.jpg"
+                    style="
+                      width: 100%;
+                      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+                    "
+                  >
+                    <source src="../assets/video.mp4" type="video/mp4" />
+                    Tu navegador no soporta la reproducción de vídeos.
+                  </video>
+                </div>
+              </div>
+
+              <div class="video-details">
+                <div class="video-tags">
+                  <span class="badge badge--primary" data-i18n="biomechanics">Biomecánica</span>
+                  <span class="badge badge--neutral" data-i18n="intermediate">Nivel Intermedio</span>
+                </div>
+                <h2 class="video-title" data-i18n="advancedTechnique">
+                  Técnica avanzada y errores comunes en el Peso Muerto Piernas Rígidas
+                </h2>
+                <p class="video-desc" data-i18n="videoDesc">
+                  Aprende a optimizar tu postura, el agarre y la activación del
+                  core para levantar más peso de forma segura y evitar lesiones
+                  en la zona lumbar.
+                </p>
+
+                <hr class="divider" />
+
+                <div class="instructor-info">
+                  <div class="instructor-avatar">
+                    <i class="fa-solid fa-user-tie"></i>
+                  </div>
+                  <div class="instructor-text">
+                    <p class="instructor-name" data-i18n="coachName">Coach Alejandro</p>
+                    <p class="instructor-role" data-i18n="coachRole">Especialista en Powerlifting</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="video-side-col">
+            <article class="card transcription-card">
+              <div class="transcription-header">
+                <h3 class="transcription-title">
+                  <i class="fa-solid fa-file-lines"></i>
+                  <span data-i18n="transcription">Transcripción</span>
+                </h3>
+                <button
+                  class="btn-icon-small"
+                  aria-label="Buscar en texto"
+                  data-i18n-aria="searchText"
+                >
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+
+              <div class="transcription-list">
+                <h5 data-i18n="trans1">Esta Funcionalidad se implementará proximamente</h5>
+              </div>
+            </article>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const translations = {
+        es: {
+          home: "Home",
+          routines: "Rutinas",
+          progression: "Progresión",
+          chat: "Chat",
+          video: "Video",
+          profile: "Perfil",
+          personalData: "Datos personales",
+          logout: "Cerrar sesión",
+          masterclass: "Masterclass",
+          videoTitle: "Peso muerto piernas rígidas",
+          biomechanics: "Biomecánica",
+          intermediate: "Nivel Intermedio",
+          advancedTechnique: "Técnica avanzada y errores comunes",
+          videoDesc: "Aprende a optimizar tu postura y evitar lesiones.",
+          coachName: "Coach Alejandro",
+          coachRole: "Especialista en Powerlifting",
+          transcription: "Transcripción",
+          searchText: "Buscar en texto",
+          trans1: "Esta función se implementará próximamente"
+        },
+        fr: {
+          home: "Accueil",
+          routines: "Routines",
+          progression: "Progression",
+          chat: "Chat",
+          video: "Vidéo",
+          profile: "Profil",
+          personalData: "Données personnelles",
+          logout: "Se déconnecter",
+          masterclass: "Masterclass",
+          videoTitle: "Soulevé de terre jambes tendues",
+          biomechanics: "Biomécanique",
+          intermediate: "Niveau Intermédiaire",
+          advancedTechnique: "Technique avancée et erreurs courantes",
+          videoDesc: "Apprenez à optimiser votre posture et à éviter les blessures.",
+          coachName: "Coach Alejandro",
+          coachRole: "Spécialiste en Powerlifting",
+          transcription: "Transcription",
+          searchText: "Rechercher dans le texte",
+          trans1: "Cette fonctionnalité sera bientôt implémentée"
+        },
+        pt: {
+          home: "Início",
+          routines: "Rotinas",
+          progression: "Progressão",
+          chat: "Chat",
+          video: "Vídeo",
+          profile: "Perfil",
+          personalData: "Dados pessoais",
+          logout: "Sair",
+          masterclass: "Masterclass",
+          videoTitle: "Levantamento terra pernas rígidas",
+          biomechanics: "Biomecânica",
+          intermediate: "Nível Intermediário",
+          advancedTechnique: "Técnica avançada e erros comuns",
+          videoDesc: "Aprenda a otimizar sua postura e evitar lesões.",
+          coachName: "Coach Alejandro",
+          coachRole: "Especialista em Powerlifting",
+          transcription: "Transcrição",
+          searchText: "Pesquisar no texto",
+          trans1: "Esta funcionalidade será implementada em breve"
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const languageSelect = document.getElementById("language-select");
+        const htmlElement = document.documentElement;
+        const profileGroup = document.querySelector(".sidebar__user-group");
+        const profileTrigger = document.getElementById("profile-menu-trigger");
+        const mobileNavQuery = window.matchMedia("(max-width: 1023px)");
+
+        function setProfileMenuOpen(open) {
+          if (!profileGroup || !profileTrigger) return;
+          profileGroup.classList.toggle("is-open", open);
+          profileTrigger.setAttribute("aria-expanded", open ? "true" : "false");
+        }
+
+        profileTrigger?.addEventListener("click", (event) => {
+          event.preventDefault();
+          if (mobileNavQuery.matches) {
+            setProfileMenuOpen(!profileGroup.classList.contains("is-open"));
+          }
+        });
+
+        document.addEventListener("click", (event) => {
+          if (profileGroup && !profileGroup.contains(event.target)) {
+            setProfileMenuOpen(false);
+          }
+        });
+
+        mobileNavQuery.addEventListener("change", () => setProfileMenuOpen(false));
+
+        const savedLanguage = localStorage.getItem("selectedLanguage") || "es";
+        languageSelect.value = savedLanguage;
+        applyLanguage(savedLanguage);
+
+        languageSelect.addEventListener("change", (e) => {
+          const lang = e.target.value;
+          localStorage.setItem("selectedLanguage", lang);
+          applyLanguage(lang);
+        });
+
+        window.addEventListener("storage", (e) => {
+          if (e.key === "selectedLanguage") {
+            languageSelect.value = e.newValue;
+            applyLanguage(e.newValue);
+          }
+        });
+
+        function applyLanguage(lang) {
+          htmlElement.lang = lang;
+          const dict = translations[lang];
+
+          document.querySelectorAll("[data-i18n]").forEach((el) => {
+            const key = el.getAttribute("data-i18n");
+            if (dict[key]) el.innerHTML = dict[key];
+          });
+
+          document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+            const key = el.getAttribute("data-i18n-aria");
+            if (dict[key]) el.setAttribute("aria-label", dict[key]);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

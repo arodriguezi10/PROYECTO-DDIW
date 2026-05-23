@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FYLIOS - Perfil</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="stylesheet" href="../css/profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="theme-light">
+    <div class="app-layout">
+      <aside class="sidebar">
+        <div class="sidebar__logo">
+          <div style="display: flex; align-items: center; gap: 0.5rem">
+            <img
+              src="../assets/favicon.svg"
+              alt="FYLIOS"
+              style="width: 2.2rem; height: auto"
+            />
+            <span>FYLIOS</span>
+          </div>
+        </div>
+        <div class="language-selector">
+          <select id="language-select">
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="pt">Português</option>
+          </select>
+        </div>
+        <nav class="sidebar__nav">
+          <a href="../index.html" class="sidebar__link">
+            <i class="fa-solid fa-house"></i> <span data-i18n="home">Home</span>
+          </a>
+          <a href="routines.html" class="sidebar__link">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <span data-i18n="routines">Rutinas</span>
+          </a>
+          <a href="#" class="sidebar__link">
+            <i class="fa-solid fa-chart-line"></i>
+            <span data-i18n="progression">Progresión</span>
+          </a>
+          <a href="#" class="sidebar__link">
+            <i class="fa-solid fa-comments"></i>
+            <span data-i18n="chat">Chat</span>
+          </a>
+          <a href="video.html" class="sidebar__link">
+            <i class="fa-solid fa-video"></i>
+            <span data-i18n="video">Video</span>
+          </a>
+
+          <div class="sidebar__user-group">
+            <a href="profile.html" class="sidebar__link sidebar__link--user">
+              <i class="fa-solid fa-user"></i>
+              <span data-i18n="profile">Perfil</span>
+            </a>
+          </div>
+
+          <div
+            class="sidebar__license"
+            style="
+              margin-top: 1rem;
+              text-align: center;
+              font-size: 0.65rem;
+              color: var(--color-navbar-text-low);
+              padding: 0 1rem;
+            "
+          >
+            <a
+              href="https://github.com/arodriguezi10/DDIW/tree/main/proyecto-DDIW/tarea-final-t2-v2"
+              target="_blank"
+              >FYLIOS</a
+            >
+            © 2026 by
+            <a href="https://github.com/arodriguezi10" target="_blank"
+              >Alejandro</a
+            >
+            is licensed under
+            <a
+              href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+              target="_blank"
+              >CC BY-NC-ND 4.0</a
+            >
+            <div style="margin-top: 0.3rem">
+              <img
+                src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+                alt=""
+                style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
+              />
+              <img
+                src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+                alt=""
+                style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
+              />
+              <img
+                src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
+                alt=""
+                style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
+              />
+              <img
+                src="https://mirrors.creativecommons.org/presskit/icons/nd.svg"
+                alt=""
+                style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
+              />
+            </div>
+          </div>
+        </nav>
+      </aside>
+
+      <main class="profile-view">
+        <header class="profile-header">
+          <a href="../index.html" class="btn-back" aria-label="Volver">
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+          <h1 class="header-title" data-i18n="headerTitle">Mi Perfil</h1>
+          <div class="spacer"></div>
+        </header>
+
+        <div class="profile-content">
+          <section class="profile-hero">
+            <div class="avatar-large">A</div>
+            <h2 class="profile-name">Alejandro</h2>
+
+            <div class="profile-badges">
+              <span class="badge badge--free">
+                <i class="fa-solid fa-seedling"></i>
+                <span data-i18n="athleteFree">Atleta Free</span>
+              </span>
+              <span class="badge badge--goal">
+                <i class="fa-solid fa-fire"></i>
+                <span data-i18n="goal">Volumen</span>
+              </span>
+            </div>
+          </section>
+
+          <section class="profile-stats">
+            <article class="stat-card">
+              <div class="stat-icon icon-plan">
+                <i class="fa-solid fa-clipboard"></i>
+              </div>
+              <p class="stat-label" data-i18n="planning">PLANIFICACIÓN</p>
+              <p class="stat-value text-primary" data-i18n="planning_value">
+                Microciclo 2
+              </p>
+              <p class="stat-desc" data-i18n="planning_desc">8 días / 2 sem.</p>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-icon icon-weight">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+              <p class="stat-label" data-i18n="initialWeight">PESO INICIAL</p>
+              <div class="stat-value-group text-accent1">
+                <span class="value-main">75</span>
+                <span class="value-decimal">,5</span>
+              </div>
+              <p class="stat-desc" data-i18n="weight_desc">kg · hace 2 días</p>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-icon icon-height">
+                <i class="fa-solid fa-ruler"></i>
+              </div>
+              <p class="stat-label" data-i18n="height">ALTURA</p>
+              <p class="stat-value text-accent2">180</p>
+              <p class="stat-desc" data-i18n="height_desc">cm</p>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-icon icon-age">
+                <i class="fa-solid fa-cake-candles"></i>
+              </div>
+              <p class="stat-label" data-i18n="age">EDAD</p>
+              <p class="stat-value text-orange">25</p>
+              <p class="stat-desc" data-i18n="age_desc">años</p>
+            </article>
+          </section>
+
+          <section class="profile-menu-section">
+            <div class="card menu-card">
+              <a href="#" class="menu-item">
+                <div class="menu-item-left">
+                  <div class="menu-icon bg-primary-soft text-primary">
+                    <i class="fa-solid fa-gear"></i>
+                  </div>
+                  <div class="menu-text">
+                    <p class="menu-title" data-i18n="settings">
+                      Ajustes y datos personales
+                    </p>
+                    <p class="menu-subtitle" data-i18n="settings_desc">
+                      Edita tu foto y tus datos
+                    </p>
+                  </div>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+              </a>
+
+              <div class="menu-divider"></div>
+
+              <a href="#" class="menu-item">
+                <div class="menu-item-left">
+                  <div class="menu-icon bg-yellow-soft text-yellow">
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <div class="menu-text">
+                    <p class="menu-title" data-i18n="subscription">
+                      Suscripción y pagos
+                    </p>
+                    <p class="menu-subtitle" data-i18n="subscription_desc">
+                      Plan Free · Activo
+                    </p>
+                  </div>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+              </a>
+
+              <div class="menu-divider"></div>
+
+              <a href="#" class="menu-item">
+                <div class="menu-item-left">
+                  <div class="menu-icon bg-accent2-soft text-accent2">
+                    <i class="fa-solid fa-message"></i>
+                  </div>
+                  <div class="menu-text">
+                    <p class="menu-title" data-i18n="support">
+                      Soporte / Ayuda
+                    </p>
+                    <p class="menu-subtitle" data-i18n="support_desc">
+                      FAQ y contacto
+                    </p>
+                  </div>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+              </a>
+            </div>
+
+            <div class="card menu-card">
+              <a href="login.html" class="menu-item menu-item--danger">
+                <div class="menu-item-left">
+                  <div class="menu-icon bg-red-soft text-red">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  </div>
+                  <div class="menu-text">
+                    <p class="menu-title text-red" data-i18n="logout">
+                      Cerrar sesión
+                    </p>
+                  </div>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow-icon text-red"></i>
+              </a>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const translations = {
+        es: {
+          home: "Home",
+          routines: "Rutinas",
+          progression: "Progresión",
+          chat: "Chat",
+          video: "Video",
+          profile: "Perfil",
+          headerTitle: "Mi Perfil",
+          athleteFree: "Atleta Free",
+          goal: "Volumen",
+          planning: "PLANIFICACIÓN",
+          planning_value: "Microciclo 2",
+          planning_desc: "8 días / 2 sem.",
+          initialWeight: "PESO INICIAL",
+          weight_desc: "kg · hace 2 días",
+          height: "ALTURA",
+          height_desc: "cm",
+          age: "EDAD",
+          age_desc: "años",
+          settings: "Ajustes y datos personales",
+          settings_desc: "Edita tu foto y tus datos",
+          subscription: "Suscripción y pagos",
+          subscription_desc: "Plan Free · Activo",
+          support: "Soporte / Ayuda",
+          support_desc: "FAQ y contacto",
+          logout: "Cerrar sesión",
+        },
+        fr: {
+          home: "Accueil",
+          routines: "Routines",
+          progression: "Progression",
+          chat: "Chat",
+          video: "Vidéo",
+          profile: "Profil",
+          headerTitle: "Mon Profil",
+          athleteFree: "Athlète Gratuit",
+          goal: "Volume",
+          planning: "PLANIFICATION",
+          planning_value: "Microcycle 2",
+          planning_desc: "8 jours / 2 sem.",
+          initialWeight: "POIDS INITIAL",
+          weight_desc: "kg · il y a 2 jours",
+          height: "HAUTEUR",
+          height_desc: "cm",
+          age: "ÂGE",
+          age_desc: "ans",
+          settings: "Paramètres et données personnelles",
+          settings_desc: "Modifiez votre photo et vos données",
+          subscription: "Abonnement et paiements",
+          subscription_desc: "Plan Gratuit · Actif",
+          support: "Assistance / Aide",
+          support_desc: "FAQ et contact",
+          logout: "Se déconnecter",
+        },
+        pt: {
+          home: "Início",
+          routines: "Rotinas",
+          progression: "Progressão",
+          chat: "Chat",
+          video: "Vídeo",
+          profile: "Perfil",
+          headerTitle: "Meu Perfil",
+          athleteFree: "Atleta Gratuito",
+          goal: "Volume",
+          planning: "PLANEJAMENTO",
+          planning_value: "Microciclo 2",
+          planning_desc: "8 dias / 2 sem.",
+          initialWeight: "PESO INICIAL",
+          weight_desc: "kg · há 2 dias",
+          height: "ALTURA",
+          height_desc: "cm",
+          age: "IDADE",
+          age_desc: "anos",
+          settings: "Configurações e datos pessoais",
+          settings_desc: "Edite sua foto e seus dados",
+          subscription: "Inscrição e pagamentos",
+          subscription_desc: "Plano Gratuito · Ativo",
+          support: "Suporte / Ajuda",
+          support_desc: "Perguntas frequentes e contato",
+          logout: "Sair",
+        },
+      };
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const languageSelect = document.getElementById("language-select");
+        const htmlElement = document.documentElement;
+
+        const savedLanguage = localStorage.getItem("selectedLanguage") || "es";
+        languageSelect.value = savedLanguage;
+        applyLanguage(savedLanguage);
+
+        languageSelect.addEventListener("change", (e) => {
+          const lang = e.target.value;
+          localStorage.setItem("selectedLanguage", lang);
+          applyLanguage(lang);
+        });
+
+        window.addEventListener("storage", (e) => {
+          if (e.key === "selectedLanguage") {
+            languageSelect.value = e.newValue;
+            applyLanguage(e.newValue);
+          }
+        });
+
+        function applyLanguage(lang) {
+          htmlElement.lang = lang;
+          const dict = translations[lang];
+
+          document.querySelectorAll("[data-i18n]").forEach((el) => {
+            const key = el.getAttribute("data-i18n");
+            if (dict[key]) {
+              el.innerHTML = dict[key];
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
