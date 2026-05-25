@@ -16,19 +16,19 @@
     
     /* Textos (Negro / Gris) */
     --color-text-high: #1B2559;  
-    --color-text-low: #707EAE;   
+    --color-text-low: #000000;   
     
     /* Colores Principales y Acentos */
     --color-primary: #4318FF;    /* Azul */
     --color-accent1: #764BA2;    /* Morado */
-    --color-accent2: #05CD99;    /* Verde/Teal */
+    --color-accent2: #059d74;    /* Verde/Teal */
     
     /* Semántica y Alertas */
-    --color-green: #05CD99;
+    --color-green: #059d74;
     --color-red: #EE5D50;
-    --color-orange: #FF8D28;
+    --color-orange: #fc7601;
     --color-brown: #975102;
-    --color-yellow: #FFB547;
+    --color-yellow: #f6b453;
 
     /* Espaciado y Radios Base */
     --radius-sm: 0.25rem;
@@ -414,6 +414,7 @@ a {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0.25rem;
+    opacity: 1; color: rgb(5, 205, 153); background-color: rgb(255, 255, 255);
 }
 
 /* Grupo para el decimal del peso */
@@ -439,7 +440,7 @@ a {
 .text-primary { color: var(--color-primary); }
 .text-accent1 { color: var(--color-accent1); }
 .text-accent2 { color: var(--color-accent2); }
-.text-orange { color: var(--color-orange); }
+.text-orange { color: rgb(252, 118, 1); }
 .text-red { color: var(--color-red); }
 
 /* -------------------------------------

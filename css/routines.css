@@ -17,7 +17,7 @@
   
     /* Textos (Negro / Gris) */
     --color-text-high: #1b2559;
-    --color-text-low: #707eae;
+    --color-text-low: black;
   
     /* Botones y Acentos */
     --color-primary: #4318ff;

@@ -17,7 +17,7 @@
 
   /* Textos (Negro / Gris) */
   --color-text-high: #1b2559;
-  --color-text-low: #707eae;
+  --color-text-low: #000000;
 
   /* Botones y Acentos */
   --color-primary: #4318ff;
@@ -328,14 +328,15 @@ button.sidebar__link--user {
   text-decoration-style: dotted;
   text-decoration-color: rgba(5, 205, 153, 0.45);
   text-underline-offset: 2px;
-  transition: color 0.2s, 
-  text-decoration-color 0.2s;
+  transition:
+    color 0.2s,
+    text-decoration-color 0.2s;
 }
 
 /* Hover: blanco, subrayado sólido */
 .sidebar__license a:hover {
   color: var(--color-navbar-text);
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Visitado: morado, subrayado punteado morado */
@@ -472,7 +473,7 @@ button.sidebar__link--user {
 
 /* Enlaces y Botones Genéricos */
 .link-primary {
-  color: var(--color-accent1);
+  color: var(--color-primary);
   font-family: var(--font-subheading);
   font-size: 1rem;
   font-weight: 700;
@@ -480,6 +481,9 @@ button.sidebar__link--user {
   transition:
     color 0.2s ease,
     transform 0.2s ease;
+  opacity: 1;
+  color: rgb(13, 110, 253);
+  background-color: rgb(244, 247, 254);
 }
 
 .link-primary:hover,
@@ -632,9 +636,9 @@ button.sidebar__link--user {
 }
 
 .day-number--completed {
-  border-color: var(--color-green);
-  background-color: var(--color-green-bg1);
-  color: var(--color-green);
+  opacity: 1;
+  color: green;
+  background-color: rgb(230, 250, 245);
 }
 
 .icon-status {
@@ -808,7 +812,7 @@ button.sidebar__link--user {
   background-color: var(--color-green-bg1);
   padding: var(--spacing-xs) var(--spacing-md);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-green);
+  border: 1px solid green;
   text-align: center;
 }
 
@@ -816,14 +820,14 @@ button.sidebar__link--user {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--color-green);
+  color: green;
 }
 
 .change-unit {
   font-family: var(--font-subheading);
   font-size: 0.7rem;
   font-weight: 600;
-  color: var(--color-green);
+  color: green;
 }
 
 .badge-trend {
@@ -832,8 +836,8 @@ button.sidebar__link--user {
   background-color: var(--color-green-bg1);
   padding: var(--spacing-xs) var(--spacing-md);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-green);
-  color: var(--color-green);
+  border: 1px solid green;
+  color: green;
   font-family: var(--font-subheading);
   font-size: 0.875rem;
   font-weight: 700;
@@ -874,7 +878,7 @@ button.sidebar__link--user {
 }
 
 .chart-day {
-  font-size: 0.65rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--color-text-low);
 }
