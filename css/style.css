@@ -20,9 +20,9 @@
   --color-text-low: #707eae;
 
   /* Botones y Acentos */
-  --color-primary: #764ba2;
-  --color-accent1: #4318ff;
-  --color-accent1-hover: #5d3a81;
+  --color-primary: #4318ff;
+  --color-accent1: #764ba2;
+  --color-primary-hover: #5d3a81;
 
   /* Estados (Verde, Rojo) */
   --color-green: #05cd99;
@@ -99,7 +99,7 @@ a {
   display: none;
 }
 
-/* Idioma flotante en móvil (no ocupa espacio en la barra inferior) */
+/* Idioma flotante en móvil */
 .language-selector {
   position: fixed;
   top: max(0.5rem, env(safe-area-inset-top, 0px));
@@ -177,13 +177,13 @@ a {
 }
 
 .sidebar__link--active {
-  color: var(--color-accent1);
+  color: var(--color-primary);
   background-color: rgba(67, 24, 255, 0.2);
   text-decoration: none;
 }
 
 /* =========================================
-   DESPLEGABLE DE PERFIL (sin clases Bootstrap)
+   DESPLEGABLE DE PERFIL
    ========================================= */
 .sidebar__user-group {
   position: relative;
@@ -288,7 +288,7 @@ button.sidebar__link--user {
   color: var(--color-red);
 }
 
-/* Menú perfil visible por encima del nav en móvil (evita recorte por overflow) */
+/* Menú perfil visible por encima del nav en móvil */
 @media (max-width: 1023px) {
   .sidebar__nav:has(.sidebar__user-group:hover),
   .sidebar__nav:has(.sidebar__user-group:focus-within),
@@ -306,6 +306,63 @@ button.sidebar__link--user {
     );
     left: auto;
   }
+}
+
+/* -------------------------------------
+   SIDEBAR LICENSE
+   ------------------------------------- */
+.sidebar__license {
+  display: none; /* oculto en móvil */
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.65rem;
+  color: var(--color-navbar-text-low);
+  padding: 0 0.5rem;
+  line-height: 1.7;
+}
+
+/* Estado normal: verde sutil, subrayado punteado para indicar que es enlace */
+.sidebar__license a {
+  color: var(--color-green);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(5, 205, 153, 0.45);
+  text-underline-offset: 2px;
+  transition: color 0.2s, 
+  text-decoration-color 0.2s;
+}
+
+/* Hover: blanco, subrayado sólido */
+.sidebar__license a:hover {
+  color: var(--color-navbar-text);
+    text-decoration: underline;
+}
+
+/* Visitado: morado, subrayado punteado morado */
+.sidebar__license a:visited {
+  color: var(--color-accent1);
+  text-decoration-color: rgba(118, 75, 162, 0.45);
+}
+
+/* Visitado + hover: blanco */
+.sidebar__license a:visited:hover {
+  color: var(--color-navbar-text);
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Iconos SVG de CC: son negros por defecto, invertir a blanco */
+.sidebar__license img {
+  filter: invert(1);
+  opacity: 0.55;
+  vertical-align: middle;
+  max-width: 1em;
+  max-height: 1em;
+  margin-left: 0.15em;
+  transition: opacity 0.2s;
+}
+
+.sidebar__license img:hover {
+  opacity: 0.9;
 }
 
 /* Layout Dashboard */
@@ -372,7 +429,7 @@ button.sidebar__link--user {
 }
 
 .text-accent {
-  color: var(--color-accent1);
+  color: var(--color-primary);
 }
 
 .tag-uppercase {
@@ -396,7 +453,7 @@ button.sidebar__link--user {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: var(--radius-xl);
-  background-color: var(--color-accent1);
+  background-color: var(--color-primary);
   color: #ffffff;
   font-family: var(--font-heading);
   font-size: 1.75rem;
@@ -410,12 +467,12 @@ button.sidebar__link--user {
 }
 
 .btn-profile:hover {
-  background-color: var(--color-accent1-hover);
+  background-color: var(--color-primary-hover);
 }
 
 /* Enlaces y Botones Genéricos */
 .link-primary {
-  color: var(--color-primary);
+  color: var(--color-accent1);
   font-family: var(--font-subheading);
   font-size: 1rem;
   font-weight: 700;
@@ -427,13 +484,13 @@ button.sidebar__link--user {
 
 .link-primary:hover,
 .link-primary:focus-visible {
-  color: var(--color-accent1);
+  color: var(--color-primary);
   transform: translateX(3px);
   text-decoration: none;
 }
 
 .link-primary:active {
-  color: var(--color-accent1-hover);
+  color: var(--color-primary-hover);
   text-decoration: none;
 }
 
@@ -454,13 +511,13 @@ button.sidebar__link--user {
 }
 
 .btn--primary {
-  background-color: var(--color-accent1);
+  background-color: var(--color-primary);
   color: #ffffff;
   box-shadow: 0 4px 10px rgba(118, 75, 162, 0.3);
 }
 
 .btn--primary:hover {
-  background-color: var(--color-accent1-hover);
+  background-color: var(--color-primary-hover);
 }
 
 .btn--full {
@@ -512,11 +569,11 @@ button.sidebar__link--user {
   cursor: not-allowed;
 }
 
-/* Botón Añadir morado */
+/* Botón Añadir */
 .btn-add {
   width: 2rem;
   height: 2rem;
-  background-color: var(--color-accent1);
+  background-color: var(--color-primary);
   color: #ffffff;
   border-radius: var(--radius-md);
   font-weight: bold;
@@ -528,7 +585,7 @@ button.sidebar__link--user {
 }
 
 .btn-add:hover {
-  background-color: var(--color-accent1-hover);
+  background-color: var(--color-primary-hover);
 }
 
 /* Calendario de Progresión */
@@ -569,9 +626,9 @@ button.sidebar__link--user {
 }
 
 .day-number--today {
-  border-color: var(--color-accent1);
+  border-color: var(--color-primary);
   background-color: #f8f5ff;
-  color: var(--color-accent1);
+  color: var(--color-primary);
 }
 
 .day-number--completed {
@@ -606,8 +663,8 @@ button.sidebar__link--user {
   height: 2.5rem;
   border-radius: var(--radius-lg);
   background-color: #ebf0ff;
-  border: 1px solid var(--color-primary);
-  color: var(--color-primary);
+  border: 1px solid var(--color-accent1);
+  color: var(--color-accent1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -813,7 +870,7 @@ button.sidebar__link--user {
 }
 
 .chart-bar--active {
-  background-color: var(--color-primary);
+  background-color: var(--color-accent1);
 }
 
 .chart-day {
@@ -851,7 +908,7 @@ button.sidebar__link--user {
 }
 
 .day-box--completed {
-  background-color: var(--color-accent1);
+  background-color: var(--color-primary);
   color: #ffffff;
 }
 
@@ -861,13 +918,13 @@ button.sidebar__link--user {
 }
 
 .day-box--today {
-  border: 2px solid var(--color-accent1);
-  color: var(--color-accent1);
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
   background-color: transparent;
 }
 
 /* =========================================
-   Responsive: Navbar móvil (anchuras pequeñas)
+   Responsive: Navbar móvil pequeño
    ========================================= */
 @media (max-width: 480px) {
   .language-selector select {
@@ -941,7 +998,8 @@ button.sidebar__link--user {
     padding: 1.25rem 1rem;
     box-shadow: none;
     display: flex;
-    flex-direction: column; /* Fundamental para empujar el botón abajo */
+    flex-direction: column;
+    overflow: visible;
   }
 
   .sidebar__license {
@@ -971,7 +1029,6 @@ button.sidebar__link--user {
     letter-spacing: -0.02em;
   }
 
-  /* El contenedor nav ocupa todo el espacio libre (flex: 1) */
   .sidebar__nav {
     flex-direction: column;
     align-items: stretch;
@@ -1009,7 +1066,7 @@ button.sidebar__link--user {
   }
 
   .sidebar__link--active {
-    background-color: var(--color-accent1);
+    background-color: var(--color-primary);
     color: #ffffff;
     box-shadow: 0 4px 10px rgba(118, 75, 162, 0.4);
   }
@@ -1026,6 +1083,13 @@ button.sidebar__link--user {
   .sidebar__user-group.is-open > .sidebar__link--user {
     background-color: rgba(255, 255, 255, 0.05);
     color: var(--color-navbar-text);
+  }
+
+  .sidebar-dropdown {
+    right: auto;
+    left: 0;
+    width: 100%;
+    bottom: calc(100% + 5px);
   }
 
   .dashboard {
@@ -1079,6 +1143,7 @@ button.sidebar__link--user {
   .weight-display {
     margin-bottom: 1rem;
   }
+
   .sidebar-dropdown {
     right: auto;
     left: 0;
@@ -1116,6 +1181,6 @@ button.sidebar__link--user {
 .language-selector select:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.1);
-  border-color: var(--color-accent1);
+  border-color: var(--color-primary);
   box-shadow: 0 0 0 2px rgba(67, 24, 255, 0.2);
 }

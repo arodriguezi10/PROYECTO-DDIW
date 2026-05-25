@@ -1,508 +1,498 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FYLIOS - Rutinas</title>
-<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
-<link rel="stylesheet" href="../css/routines.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-  </head>
-  <body class="theme-light">
-    <div class="app-layout">
-      <aside class="sidebar">
-        <div class="sidebar__logo">
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <img src="../assets/favicon.svg" alt="FYLIOS" style="width: 2.2rem; height: auto;" />
-                <span>FYLIOS</span>
-            </div>
-        </div>
-        <div class="language-selector">
-          <select id="language-select">
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="pt">Português</option>
-          </select>
-        </div>
-        <nav class="sidebar__nav">
-          <a href="../index.html" class="sidebar__link">
-            <i class="fa-solid fa-house"></i> <span data-i18n="home">Home</span>
-          </a>
-          <a href="#" class="sidebar__link sidebar__link--active">
-            <i class="fa-solid fa-clipboard-list"></i> <span data-i18n="routines">Rutinas</span>
-          </a>
-          <a href="#" class="sidebar__link">
-            <i class="fa-solid fa-chart-line"></i> <span data-i18n="progression">Progresión</span>
-          </a>
-          <a href="#" class="sidebar__link">
-            <i class="fa-solid fa-comments"></i> <span data-i18n="chat">Chat</span>
-          </a>
-<a href="video.html" class="sidebar__link">
-    <i class="fa-solid fa-circle-play"></i> <span data-i18n="video">Vídeo</span>
-  </a>
 
-          <article class="card goals-card" style=" background: var(--color-bg-card); border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,0.05);">
-                <div class="card-header" style="display: flex; justify-content: space-between; align-items: center">
-                    <h3 style="font-size: 1rem; font-weight: 700; color: var(--color-navbar-text); margin: 0;" data-i18n="goals_title">Objetivos</h3>
-                    <i class="fa-solid fa-list-check" style="color: var(--color-accent);"></i>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FYLIOS - Rutinas</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../css/routines.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body class="theme-light">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar__logo">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <img src="../assets/favicon.svg" alt="FYLIOS" style="width: 2.2rem; height: auto;" />
+          <span>FYLIOS</span>
+        </div>
+      </div>
+      <div class="language-selector">
+        <select id="language-select">
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="pt">Português</option>
+        </select>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="../index.html" class="sidebar__link">
+          <i class="fa-solid fa-house"></i> <span data-i18n="home">Home</span>
+        </a>
+        <a href="#" class="sidebar__link sidebar__link--active">
+          <i class="fa-solid fa-clipboard-list"></i> <span data-i18n="routines">Rutinas</span>
+        </a>
+
+        <a href="video.html" class="sidebar__link">
+          <i class="fa-solid fa-circle-play"></i> <span data-i18n="video">Vídeo</span>
+        </a>
+
+        <article class="card goals-card"
+          style=" background: var(--color-bg-card); border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,0.05);">
+          <div class="card-header" style="display: flex; justify-content: space-between; align-items: center">
+            <h3 style="font-size: 1rem; font-weight: 700; color: var(--color-navbar-text); margin: 0;"
+              data-i18n="goals_title">Objetivos</h3>
+            <i class="fa-solid fa-list-check" style="color: var(--color-accent);"></i>
+          </div>
+
+          <ul class="goals-list" style="list-style: none; padding: 0; margin: 0;">
+            <li class="goal-item"
+              style="display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <input type="checkbox" checked style="accent-color: var(--color-accent); cursor: pointer;">
+              <span style="font-size: 0.85rem; color: var(--color-navbar-text-low);" data-i18n="goal_1">Hacer 4
+                sesiones</span>
+            </li>
+            <li class="goal-item"
+              style="display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <input type="checkbox" style="accent-color: var(--color-accent); cursor: pointer;">
+              <span style="font-size: 0.85rem; color: var(--color-navbar-text-low);" data-i18n="goal_2">Nuevo PR</span>
+            </li>
+            <li class="goal-item" style="display: flex; align-items: center; gap: 1rem;">
+              <input type="checkbox" style="accent-color: var(--color-accent); cursor: pointer;">
+              <span style="font-size: 0.85rem; color: var(--color-navbar-text-low);" data-i18n="goal_3">Registrar
+                pes</span>
+            </li>
+          </ul>
+        </article>
+
+        <div class="sidebar__user-group">
+          <button type="button" class="sidebar__link sidebar__link--user" id="profile-menu-trigger" aria-haspopup="true"
+            aria-expanded="false" aria-controls="profile-menu">
+            <i class="fa-solid fa-user"></i>
+            <span data-i18n="profile">Perfil</span>
+          </button>
+          <div class="sidebar-dropdown" id="profile-menu" role="menu">
+            <a href="profile.html" class="sidebar-dropdown__item" role="menuitem" data-i18n="personalData">Datos
+              personales</a>
+            <div class="sidebar-dropdown__divider" role="separator"></div>
+            <a href="login.html" class="sidebar-dropdown__item sidebar-dropdown__item--danger" role="menuitem"
+              data-i18n="logout">Cerrar sesión</a>
+          </div>
+        </div>
+        <div class="sidebar__license" style="
+              margin-top: 1rem;
+              text-align: center;
+              font-size: 0.65rem;
+              color: var(--color-navbar-text-low);
+              padding: 0 1rem;
+            ">
+          <a href="https://github.com/arodriguezi10/DDIW/tree/main/proyecto-DDIW/tarea-final-t2-v2" target="_blank">FYLIOS</a>
+          © 2026 by
+          <a href="https://github.com/arodriguezi10" target="_blank">Alejandro</a> is licensed
+          under
+          <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>
+          <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""
+            style="max-width: 1em; max-height: 1em; margin-left: 0.2em" />
+          <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""
+            style="max-width: 1em; max-height: 1em; margin-left: 0.2em" />
+          <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt=""
+            style="max-width: 1em; max-height: 1em; margin-left: 0.2em" />
+          <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" alt=""
+            style="max-width: 1em; max-height: 1em; margin-left: 0.2em" />
+        </div>
+      </nav>
+    </aside>
+
+    <main class="dashboard">
+      <header class="routines-header">
+        <div class="header-titles">
+          <p class="text-caption" data-i18n="library">Biblioteca</p>
+          <h1 class="title-main" data-i18n="routinesTitle">Rutinas</h1>
+        </div>
+        <div class="header-actions">
+          <button class="btn-icon" aria-label="Ajustes" data-i18n-aria="settings">
+            <i class="fa-solid fa-gear"></i>
+          </button>
+          <button class="btn-icon btn-icon--primary mobile-only" aria-label="Crear rutina"
+            data-i18n-aria="createRoutine">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </header>
+
+      <section class="tabs-section">
+        <div class="tabs-container">
+          <button class="tab-btn tab-btn--active" data-i18n="routinesTab">Rutinas</button>
+          <button class="tab-btn tab-btn--locked" data-i18n="progressionTab_html">
+            Progresión <i class="fa-solid fa-lock lock-icon"></i>
+          </button>
+        </div>
+      </section>
+
+      <div class="routines-desktop-grid">
+        <div class="routines-main-col">
+          <section class="routines-meta">
+            <p class="text-count" data-i18n="routineCount">2 rutinas</p>
+            <div class="search-container">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input type="text" class="search-input" placeholder="Buscar rutina por nombre, tipo o descripción..."
+                data-i18n-placeholder="searchPlaceholder" />
+            </div>
+          </section>
+
+          <section class="routines-list">
+            <article class="card routine-card">
+              <div class="routine-card__header">
+                <div class="routine-info-main">
+                  <div class="routine-title-group">
+                    <h3 class="routine-title" data-i18n="routine1Title">Empuje Pesado</h3>
+                    <span class="badge badge--primary" data-i18n="routine1Type">Hipertrofia</span>
+                  </div>
+                  <p class="routine-desc" data-i18n="routine1Desc">
+                    Enfoque en pecho, hombros y tríceps con cargas altas.
+                  </p>
+                  <div class="routine-meta">
+                    <span><i class="fa-regular fa-calendar"></i> <span data-i18n="routine1Days">Lun, Jue</span></span>
+                    <span><i class="fa-regular fa-clock"></i> <span data-i18n="routine1Duration">60 min</span></span>
+                  </div>
                 </div>
-                
-                <ul class="goals-list" style="list-style: none; padding: 0; margin: 0;">
-                    <li class="goal-item" style="display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        <input type="checkbox" checked style="accent-color: var(--color-accent); cursor: pointer;">
-                        <span style="font-size: 0.85rem; color: var(--color-navbar-text-low);" data-i18n="goal_1">Hacer 4 sesiones</span>
-                    </li>
-                    <li class="goal-item" style="display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        <input type="checkbox" style="accent-color: var(--color-accent); cursor: pointer;">
-                        <span style="font-size: 0.85rem; color: var(--color-navbar-text-low);" data-i18n="goal_2">Nuevo PR</span>
-                    </li>
-                    <li class="goal-item" style="display: flex; align-items: center; gap: 1rem;">
-                        <input type="checkbox" style="accent-color: var(--color-accent); cursor: pointer;">
-                        <span style="font-size: 0.85rem; color: var(--color-navbar-text-low);" data-i18n="goal_3">Registrar pes</span>
-                    </li>
-                </ul>
+                <button class="btn-options" aria-label="Opciones" data-i18n-aria="options">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="routine-card__footer">
+                <div class="routine-stats">
+                  <div class="stat-item">
+                    <p class="stat-value text-accent1">6</p>
+                    <p class="stat-label" data-i18n="routineExercises">Ejercicios</p>
+                  </div>
+                  <div class="stat-divider"></div>
+                  <div class="stat-item">
+                    <p class="stat-value text-accent1">18</p>
+                    <p class="stat-label" data-i18n="routineSeries">Series</p>
+                  </div>
+                  <div class="stat-divider"></div>
+                  <div class="stat-item">
+                    <p class="stat-value text-accent1">60</p>
+                    <p class="stat-label" data-i18n="routineMinutes">Minutos</p>
+                  </div>
+                </div>
+                <button class="btn-view" data-i18n="viewButton">Ver</button>
+              </div>
+
+              <div class="routine-muscles">
+                <p class="muscles-label" data-i18n="musclesLabel">Grupos musculares:</p>
+                <p class="muscles-value" data-i18n="routine1Muscles">Pecho, Tríceps, Hombro Frontal</p>
+              </div>
             </article>
 
-          <div class="sidebar__user-group">
-            <button
-              type="button"
-              class="sidebar__link sidebar__link--user"
-              id="profile-menu-trigger"
-              aria-haspopup="true"
-              aria-expanded="false"
-              aria-controls="profile-menu"
-            >
-              <i class="fa-solid fa-user"></i>
-              <span data-i18n="profile">Perfil</span>
-            </button>
-            <div class="sidebar-dropdown" id="profile-menu" role="menu">
-              <a
-                href="profile.html"
-                class="sidebar-dropdown__item"
-                role="menuitem"
-                data-i18n="personalData"
-                >Datos personales</a
-              >
-              <div class="sidebar-dropdown__divider" role="separator"></div>
-              <a
-                href="login.html"
-                class="sidebar-dropdown__item sidebar-dropdown__item--danger"
-                role="menuitem"
-                data-i18n="logout"
-                >Cerrar sesión</a
-              >
-            </div>
-          </div>
-          <div class="sidebar__license" style="margin-top: 1rem; text-align: center; font-size: 0.65rem; color: var(--color-navbar-text-low); padding: 0 1rem;">
-            <a href="https://github.com/arodriguezi10/DDIW/tree/main/proyecto-DDIW/tarea-final-t2-v2">FYLIOS</a> © 2026 by 
-            <a href="https://github.com/arodriguezi10">Alejandro</a> is licensed under 
-            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
-            <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
-            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
-            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
-            <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
-          </div>
-        </nav>
-      </aside>
-
-      <main class="dashboard">
-        <header class="routines-header">
-          <div class="header-titles">
-            <p class="text-caption" data-i18n="library">Biblioteca</p>
-            <h1 class="title-main" data-i18n="routinesTitle">Rutinas</h1>
-          </div>
-          <div class="header-actions">
-            <button class="btn-icon" aria-label="Ajustes" data-i18n-aria="settings">
-              <i class="fa-solid fa-gear"></i>
-            </button>
-            <button
-              class="btn-icon btn-icon--primary mobile-only"
-              aria-label="Crear rutina"
-              data-i18n-aria="createRoutine"
-            >
-              <i class="fa-solid fa-plus"></i>
-            </button>
-          </div>
-        </header>
-
-        <section class="tabs-section">
-          <div class="tabs-container">
-            <button class="tab-btn tab-btn--active" data-i18n="routinesTab">Rutinas</button>
-            <button class="tab-btn tab-btn--locked" data-i18n="progressionTab_html">
-              Progresión <i class="fa-solid fa-lock lock-icon"></i>
-            </button>
-          </div>
-        </section>
-
-        <div class="routines-desktop-grid">
-          <div class="routines-main-col">
-            <section class="routines-meta">
-              <p class="text-count" data-i18n="routineCount">2 rutinas</p>
-              <div class="search-container">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <input
-                  type="text"
-                  class="search-input"
-                  placeholder="Buscar rutina por nombre, tipo o descripción..."
-                  data-i18n-placeholder="searchPlaceholder"
-                />
-              </div>
-            </section>
-
-            <section class="routines-list">
-              <article class="card routine-card">
-                <div class="routine-card__header">
-                  <div class="routine-info-main">
-                    <div class="routine-title-group">
-                      <h3 class="routine-title" data-i18n="routine1Title">Empuje Pesado</h3>
-                      <span class="badge badge--primary" data-i18n="routine1Type">Hipertrofia</span>
-                    </div>
-                    <p class="routine-desc" data-i18n="routine1Desc">
-                      Enfoque en pecho, hombros y tríceps con cargas altas.
-                    </p>
-                    <div class="routine-meta">
-                      <span><i class="fa-regular fa-calendar"></i> <span data-i18n="routine1Days">Lun, Jue</span></span>
-                      <span><i class="fa-regular fa-clock"></i> <span data-i18n="routine1Duration">60 min</span></span>
-                    </div>
+            <article class="card routine-card">
+              <div class="routine-card__header">
+                <div class="routine-info-main">
+                  <div class="routine-title-group">
+                    <h3 class="routine-title" data-i18n="routine2Title">Tracción y Espalda</h3>
+                    <span class="badge badge--primary" data-i18n="routine2Type">Fuerza</span>
                   </div>
-                  <button class="btn-options" aria-label="Opciones" data-i18n-aria="options">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </button>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="routine-card__footer">
-                  <div class="routine-stats">
-                    <div class="stat-item">
-                      <p class="stat-value text-accent1">6</p>
-                      <p class="stat-label" data-i18n="routineExercises">Ejercicios</p>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                      <p class="stat-value text-accent1">18</p>
-                      <p class="stat-label" data-i18n="routineSeries">Series</p>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                      <p class="stat-value text-accent1">60</p>
-                      <p class="stat-label" data-i18n="routineMinutes">Minutos</p>
-                    </div>
-                  </div>
-                  <button class="btn-view" data-i18n="viewButton">Ver</button>
-                </div>
-
-                <div class="routine-muscles">
-                  <p class="muscles-label" data-i18n="musclesLabel">Grupos musculares:</p>
-                  <p class="muscles-value" data-i18n="routine1Muscles">Pecho, Tríceps, Hombro Frontal</p>
-                </div>
-              </article>
-
-              <article class="card routine-card">
-                <div class="routine-card__header">
-                  <div class="routine-info-main">
-                    <div class="routine-title-group">
-                      <h3 class="routine-title" data-i18n="routine2Title">Tracción y Espalda</h3>
-                      <span class="badge badge--primary" data-i18n="routine2Type">Fuerza</span>
-                    </div>
-                    <p class="routine-desc" data-i18n="routine2Desc">
-                      Dominadas pesadas y remos para amplitud.
-                    </p>
-                    <div class="routine-meta">
-                      <span><i class="fa-regular fa-calendar"></i> <span data-i18n="routine2Days">Mar, Vie</span></span>
-                      <span><i class="fa-regular fa-clock"></i> <span data-i18n="routine2Duration">50 min</span></span>
-                    </div>
-                  </div>
-                  <button class="btn-options" aria-label="Opciones" data-i18n-aria="options">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </button>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="routine-card__footer">
-                  <div class="routine-stats">
-                    <div class="stat-item">
-                      <p class="stat-value text-accent1">5</p>
-                      <p class="stat-label" data-i18n="routineExercises">Ejercicios</p>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                      <p class="stat-value text-accent1">15</p>
-                      <p class="stat-label" data-i18n="routineSeries">Series</p>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                      <p class="stat-value text-accent1">50</p>
-                      <p class="stat-label" data-i18n="routineMinutes">Minutos</p>
-                    </div>
-                  </div>
-                  <button class="btn-view" data-i18n="viewButton">Ver</button>
-                </div>
-
-                <div class="routine-muscles">
-                  <p class="muscles-label" data-i18n="musclesLabel">Grupos musculares:</p>
-                  <p class="muscles-value" data-i18n="routine2Muscles">Dorsal, Bíceps, Trapecio</p>
-                </div>
-              </article>
-            </section>
-          </div>
-
-          <div class="routines-side-col">
-            <section class="routines-create">
-              <button class="btn-create-large">
-                <i class="fa-solid fa-plus"></i> <span data-i18n="createNewRoutine">Crear nueva rutina</span>
-              </button>
-            </section>
-
-            <section class="routines-upsell">
-              <article class="card upsell-card">
-                <div class="upsell-icon">
-                  <i class="fa-solid fa-crown"></i>
-                </div>
-
-                <div class="upsell-content">
-                  <div class="upsell-header">
-                    <h3 class="upsell-title" data-i18n="upsellTitle_html">
-                      Crear <br />
-                      progresión
-                    </h3>
-                    <span class="badge badge--elite" data-i18n="eliteBadge_html">
-                      <i class="fa-solid fa-gem"></i> ÉLITE
-                    </span>
-                  </div>
-                  <p class="upsell-desc" data-i18n="upsellDesc">
-                    Planifica la evolución de cargas semana a semana
+                  <p class="routine-desc" data-i18n="routine2Desc">
+                    Dominadas pesadas y remos para amplitud.
                   </p>
+                  <div class="routine-meta">
+                    <span><i class="fa-regular fa-calendar"></i> <span data-i18n="routine2Days">Mar, Vie</span></span>
+                    <span><i class="fa-regular fa-clock"></i> <span data-i18n="routine2Duration">50 min</span></span>
+                  </div>
                 </div>
+                <button class="btn-options" aria-label="Opciones" data-i18n-aria="options">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+              </div>
 
-                <div class="upsell-arrow">
-                  <i class="fa-solid fa-arrow-right"></i>
+              <div class="divider"></div>
+
+              <div class="routine-card__footer">
+                <div class="routine-stats">
+                  <div class="stat-item">
+                    <p class="stat-value text-accent1">5</p>
+                    <p class="stat-label" data-i18n="routineExercises">Ejercicios</p>
+                  </div>
+                  <div class="stat-divider"></div>
+                  <div class="stat-item">
+                    <p class="stat-value text-accent1">15</p>
+                    <p class="stat-label" data-i18n="routineSeries">Series</p>
+                  </div>
+                  <div class="stat-divider"></div>
+                  <div class="stat-item">
+                    <p class="stat-value text-accent1">50</p>
+                    <p class="stat-label" data-i18n="routineMinutes">Minutos</p>
+                  </div>
                 </div>
-              </article>
-            </section>
-          </div>
+                <button class="btn-view" data-i18n="viewButton">Ver</button>
+              </div>
+
+              <div class="routine-muscles">
+                <p class="muscles-label" data-i18n="musclesLabel">Grupos musculares:</p>
+                <p class="muscles-value" data-i18n="routine2Muscles">Dorsal, Bíceps, Trapecio</p>
+              </div>
+            </article>
+          </section>
         </div>
-      </main>
-    </div>
 
-    <script>
-      const translations = {
-        es: {
-          home: "Home",
-          routines: "Rutinas",
-          progression: "Progresión",
-          chat: "Chat",
-          video: "Video",
-          profile: "Perfil",
-          personalData: "Datos personales",
-          logout: "Cerrar sesión",
-          library: "Biblioteca",
-          routinesTitle: "Rutinas",
-          settings: "Ajustes",
-          createRoutine: "Crear rutina",
-          options: "Opciones",
-          routinesTab: "Rutinas",
-          progressionTab_html: "Progresión <i class=\"fa-solid fa-lock lock-icon\"></i>",
-          routineCount: "2 rutinas",
-          searchPlaceholder: "Buscar rutina por nombre, tipo o descripción...",
-          routine1Title: "Empuje Pesado",
-          routine1Type: "Hipertrofia",
-          routine1Desc: "Enfoque en pecho, hombros y tríceps con cargas altas.",
-          routine1Days: "Lun, Jue",
-          routine1Duration: "60 min",
-          routineExercises: "Ejercicios",
-          routineSeries: "Series",
-          routineMinutes: "Minutos",
-          routine1Muscles: "Pecho, Tríceps, Hombro Frontal",
-          routine2Title: "Tracción y Espalda",
-          routine2Type: "Fuerza",
-          routine2Desc: "Dominadas pesadas y remos para amplitud.",
-          routine2Days: "Mar, Vie",
-          routine2Duration: "50 min",
-          routine2Muscles: "Dorsal, Bíceps, Trapecio",
-          musclesLabel: "Grupos musculares:",
-          viewButton: "Ver",
-          createNewRoutine: "Crear nueva rutina",
-          upsellTitle_html: "Crear <br /> progresión",
-          eliteBadge_html: "<i class=\"fa-solid fa-gem\"></i> ÉLITE",
-          upsellDesc: "Planifica la evolución de cargas semana a semana",
-        },
-        fr: {
-          home: "Accueil",
-          routines: "Routines",
-          progression: "Progression",
-          chat: "Chat",
-          video: "Vidéo",
-          profile: "Profil",
-          personalData: "Données personnelles",
-          logout: "Se déconnecter",
-          library: "Bibliothèque",
-          routinesTitle: "Routines",
-          settings: "Paramètres",
-          createRoutine: "Créer une routine",
-          options: "Options",
-          routinesTab: "Routines",
-          progressionTab_html: "Progression <i class=\"fa-solid fa-lock lock-icon\"></i>",
-          routineCount: "2 routines",
-          searchPlaceholder: "Rechercher une routine par nom, type ou description...",
-          routine1Title: "Poussée Lourde",
-          routine1Type: "Hypertrophie",
-          routine1Desc: "Accent sur la poitrine, les épaules et les triceps avec des charges élevées.",
-          routine1Days: "Lun, Jeu",
-          routine1Duration: "60 min",
-          routineExercises: "Exercices",
-          routineSeries: "Séries",
-          routineMinutes: "Minutes",
-          routine1Muscles: "Poitrine, Triceps, Épaule Antérieure",
-          routine2Title: "Traction et Dos",
-          routine2Type: "Force",
-          routine2Desc: "Tractions lourdes et rames pour l'amplitude.",
-          routine2Days: "Mar, Ven",
-          routine2Duration: "50 min",
-          routine2Muscles: "Dorsal, Biceps, Trapèze",
-          musclesLabel: "Groupes musculaires:",
-          viewButton: "Voir",
-          createNewRoutine: "Créer une nouvelle routine",
-          upsellTitle_html: "Créer une <br /> progression",
-          eliteBadge_html: "<i class=\"fa-solid fa-gem\"></i> ÉLITE",
-          upsellDesc: "Planifiez l'évolution des charges semaine après semaine",
-        },
-        pt: {
-          home: "Início",
-          routines: "Rotinas",
-          progression: "Progressão",
-          chat: "Chat",
-          video: "Vídeo",
-          profile: "Perfil",
-          personalData: "Dados pessoais",
-          logout: "Sair",
-          library: "Biblioteca",
-          routinesTitle: "Rotinas",
-          settings: "Configurações",
-          createRoutine: "Criar rotina",
-          options: "Opções",
-          routinesTab: "Rotinas",
-          progressionTab_html: "Progressão <i class=\"fa-solid fa-lock lock-icon\"></i>",
-          routineCount: "2 rotinas",
-          searchPlaceholder: "Pesquisar rotina por nome, tipo ou descrição...",
-          routine1Title: "Empurrão Pesado",
-          routine1Type: "Hipertrofia",
-          routine1Desc: "Foco em peito, ombros e tríceps com cargas altas.",
-          routine1Days: "Seg, Qui",
-          routine1Duration: "60 min",
-          routineExercises: "Exercícios",
-          routineSeries: "Séries",
-          routineMinutes: "Minutos",
-          routine1Muscles: "Peito, Tríceps, Ombro Frontal",
-          routine2Title: "Tração e Costas",
-          routine2Type: "Força",
-          routine2Desc: "Puxadas pesadas e remadas para amplitude.",
-          routine2Days: "Ter, Sex",
-          routine2Duration: "50 min",
-          routine2Muscles: "Dorsal, Bíceps, Trapézio",
-          musclesLabel: "Grupos musculares:",
-          viewButton: "Ver",
-          createNewRoutine: "Criar nova rotina",
-          upsellTitle_html: "Criar <br /> progressão",
-          eliteBadge_html: "<i class=\"fa-solid fa-gem\"></i> ÉLITE",
-          upsellDesc: "Planeje a evolução de cargas semana a semana",
-        },
-      };
+        <div class="routines-side-col">
+          <section class="routines-create">
+            <button class="btn-create-large">
+              <i class="fa-solid fa-plus"></i> <span data-i18n="createNewRoutine">Crear nueva rutina</span>
+            </button>
+          </section>
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const searchInput = document.querySelector(".search-input");
-        const routineCards = document.querySelectorAll(".routine-card");
-        const languageSelect = document.getElementById("language-select");
-        const htmlElement = document.documentElement;
-        const profileGroup = document.querySelector(".sidebar__user-group");
-        const profileTrigger = document.getElementById("profile-menu-trigger");
-        const mobileNavQuery = window.matchMedia("(max-width: 1023px)");
+          <section class="routines-upsell">
+            <article class="card upsell-card">
+              <div class="upsell-icon">
+                <i class="fa-solid fa-crown"></i>
+              </div>
 
-        function setProfileMenuOpen(open) {
-          if (!profileGroup || !profileTrigger) return;
-          profileGroup.classList.toggle("is-open", open);
-          profileTrigger.setAttribute("aria-expanded", open ? "true" : "false");
-        }
+              <div class="upsell-content">
+                <div class="upsell-header">
+                  <h3 class="upsell-title" data-i18n="upsellTitle_html">
+                    Crear <br />
+                    progresión
+                  </h3>
+                  <span class="badge badge--elite" data-i18n="eliteBadge_html">
+                    <i class="fa-solid fa-gem"></i> ÉLITE
+                  </span>
+                </div>
+                <p class="upsell-desc" data-i18n="upsellDesc">
+                  Planifica la evolución de cargas semana a semana
+                </p>
+              </div>
 
-        profileTrigger?.addEventListener("click", (event) => {
-          event.preventDefault();
-          if (mobileNavQuery.matches) {
-            setProfileMenuOpen(!profileGroup.classList.contains("is-open"));
-          }
-        });
+              <div class="upsell-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
 
-        document.addEventListener("click", (event) => {
-          if (profileGroup && !profileGroup.contains(event.target)) {
-            setProfileMenuOpen(false);
-          }
-        });
+  <script>
+    const translations = {
+      es: {
+        home: "Home",
+        routines: "Rutinas",
+        progression: "Progresión",
+        chat: "Chat",
+        video: "Video",
+        profile: "Perfil",
+        personalData: "Datos personales",
+        logout: "Cerrar sesión",
+        library: "Biblioteca",
+        routinesTitle: "Rutinas",
+        settings: "Ajustes",
+        createRoutine: "Crear rutina",
+        options: "Opciones",
+        routinesTab: "Rutinas",
+        progressionTab_html: "Progresión <i class=\"fa-solid fa-lock lock-icon\"></i>",
+        routineCount: "2 rutinas",
+        searchPlaceholder: "Buscar rutina por nombre, tipo o descripción...",
+        routine1Title: "Empuje Pesado",
+        routine1Type: "Hipertrofia",
+        routine1Desc: "Enfoque en pecho, hombros y tríceps con cargas altas.",
+        routine1Days: "Lun, Jue",
+        routine1Duration: "60 min",
+        routineExercises: "Ejercicios",
+        routineSeries: "Series",
+        routineMinutes: "Minutos",
+        routine1Muscles: "Pecho, Tríceps, Hombro Frontal",
+        routine2Title: "Tracción y Espalda",
+        routine2Type: "Fuerza",
+        routine2Desc: "Dominadas pesadas y remos para amplitud.",
+        routine2Days: "Mar, Vie",
+        routine2Duration: "50 min",
+        routine2Muscles: "Dorsal, Bíceps, Trapecio",
+        musclesLabel: "Grupos musculares:",
+        viewButton: "Ver",
+        createNewRoutine: "Crear nueva rutina",
+        upsellTitle_html: "Crear <br /> progresión",
+        eliteBadge_html: "<i class=\"fa-solid fa-gem\"></i> ÉLITE",
+        upsellDesc: "Planifica la evolución de cargas semana a semana",
+      },
+      fr: {
+        home: "Accueil",
+        routines: "Routines",
+        progression: "Progression",
+        chat: "Chat",
+        video: "Vidéo",
+        profile: "Profil",
+        personalData: "Données personnelles",
+        logout: "Se déconnecter",
+        library: "Bibliothèque",
+        routinesTitle: "Routines",
+        settings: "Paramètres",
+        createRoutine: "Créer une routine",
+        options: "Options",
+        routinesTab: "Routines",
+        progressionTab_html: "Progression <i class=\"fa-solid fa-lock lock-icon\"></i>",
+        routineCount: "2 routines",
+        searchPlaceholder: "Rechercher une routine par nom, type ou description...",
+        routine1Title: "Poussée Lourde",
+        routine1Type: "Hypertrophie",
+        routine1Desc: "Accent sur la poitrine, les épaules et les triceps avec des charges élevées.",
+        routine1Days: "Lun, Jeu",
+        routine1Duration: "60 min",
+        routineExercises: "Exercices",
+        routineSeries: "Séries",
+        routineMinutes: "Minutes",
+        routine1Muscles: "Poitrine, Triceps, Épaule Antérieure",
+        routine2Title: "Traction et Dos",
+        routine2Type: "Force",
+        routine2Desc: "Tractions lourdes et rames pour l'amplitude.",
+        routine2Days: "Mar, Ven",
+        routine2Duration: "50 min",
+        routine2Muscles: "Dorsal, Biceps, Trapèze",
+        musclesLabel: "Groupes musculaires:",
+        viewButton: "Voir",
+        createNewRoutine: "Créer une nouvelle routine",
+        upsellTitle_html: "Créer une <br /> progression",
+        eliteBadge_html: "<i class=\"fa-solid fa-gem\"></i> ÉLITE",
+        upsellDesc: "Planifiez l'évolution des charges semaine après semaine",
+      },
+      pt: {
+        home: "Início",
+        routines: "Rotinas",
+        progression: "Progressão",
+        chat: "Chat",
+        video: "Vídeo",
+        profile: "Perfil",
+        personalData: "Dados pessoais",
+        logout: "Sair",
+        library: "Biblioteca",
+        routinesTitle: "Rotinas",
+        settings: "Configurações",
+        createRoutine: "Criar rotina",
+        options: "Opções",
+        routinesTab: "Rotinas",
+        progressionTab_html: "Progressão <i class=\"fa-solid fa-lock lock-icon\"></i>",
+        routineCount: "2 rotinas",
+        searchPlaceholder: "Pesquisar rotina por nome, tipo ou descrição...",
+        routine1Title: "Empurrão Pesado",
+        routine1Type: "Hipertrofia",
+        routine1Desc: "Foco em peito, ombros e tríceps com cargas altas.",
+        routine1Days: "Seg, Qui",
+        routine1Duration: "60 min",
+        routineExercises: "Exercícios",
+        routineSeries: "Séries",
+        routineMinutes: "Minutos",
+        routine1Muscles: "Peito, Tríceps, Ombro Frontal",
+        routine2Title: "Tração e Costas",
+        routine2Type: "Força",
+        routine2Desc: "Puxadas pesadas e remadas para amplitude.",
+        routine2Days: "Ter, Sex",
+        routine2Duration: "50 min",
+        routine2Muscles: "Dorsal, Bíceps, Trapézio",
+        musclesLabel: "Grupos musculares:",
+        viewButton: "Ver",
+        createNewRoutine: "Criar nova rotina",
+        upsellTitle_html: "Criar <br /> progressão",
+        eliteBadge_html: "<i class=\"fa-solid fa-gem\"></i> ÉLITE",
+        upsellDesc: "Planeje a evolução de cargas semana a semana",
+      },
+    };
 
-        mobileNavQuery.addEventListener("change", () => setProfileMenuOpen(false));
+    document.addEventListener("DOMContentLoaded", () => {
+      const searchInput = document.querySelector(".search-input");
+      const routineCards = document.querySelectorAll(".routine-card");
+      const languageSelect = document.getElementById("language-select");
+      const htmlElement = document.documentElement;
+      const profileGroup = document.querySelector(".sidebar__user-group");
+      const profileTrigger = document.getElementById("profile-menu-trigger");
+      const mobileNavQuery = window.matchMedia("(max-width: 1023px)");
 
-        // 1. Buscador (Funcionalidad nativa conservada)
-        searchInput.addEventListener("input", () => {
-          const searchTerm = searchInput.value.toLowerCase();
-          routineCards.forEach((card) => {
-            const title = card.querySelector(".routine-title").textContent.toLowerCase();
-            const badge = card.querySelector(".badge").textContent.toLowerCase();
-            const desc = card.querySelector(".routine-desc").textContent.toLowerCase();
+      function setProfileMenuOpen(open) {
+        if (!profileGroup || !profileTrigger) return;
+        profileGroup.classList.toggle("is-open", open);
+        profileTrigger.setAttribute("aria-expanded", open ? "true" : "false");
+      }
 
-            if (title.includes(searchTerm) || badge.includes(searchTerm) || desc.includes(searchTerm)) {
-              card.style.display = "block";
-            } else {
-              card.style.display = "none";
-            }
-          });
-        });
-
-        // 2. Inicializar Idioma
-        const savedLanguage = localStorage.getItem("selectedLanguage") || "es";
-        languageSelect.value = savedLanguage;
-        applyLanguage(savedLanguage);
-
-        // 3. Escuchar cambios locales
-        languageSelect.addEventListener("change", (e) => {
-          const lang = e.target.value;
-          localStorage.setItem("selectedLanguage", lang);
-          applyLanguage(lang);
-        });
-
-        // 4. Sincronización multi-pestaña
-        window.addEventListener("storage", (e) => {
-          if (e.key === "selectedLanguage") {
-            languageSelect.value = e.newValue;
-            applyLanguage(e.newValue);
-          }
-        });
-
-        // 5. Aplicar traducciones
-        function applyLanguage(lang) {
-          htmlElement.lang = lang;
-          const dict = translations[lang];
-
-          // Textos estándar (y etiquetas HTML incrustadas)
-          document.querySelectorAll("[data-i18n]").forEach((el) => {
-            const key = el.getAttribute("data-i18n");
-            if (dict[key]) el.innerHTML = dict[key];
-          });
-
-          // Placeholders
-          document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-            const key = el.getAttribute("data-i18n-placeholder");
-            if (dict[key]) el.placeholder = dict[key];
-          });
-
-          // Atributos aria-label (Botones de ajustes, crear, opciones)
-          document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
-            const key = el.getAttribute("data-i18n-aria");
-            if (dict[key]) el.setAttribute("aria-label", dict[key]);
-          });
+      profileTrigger?.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (mobileNavQuery.matches) {
+          setProfileMenuOpen(!profileGroup.classList.contains("is-open"));
         }
       });
-    </script>
-  </body>
+
+      document.addEventListener("click", (event) => {
+        if (profileGroup && !profileGroup.contains(event.target)) {
+          setProfileMenuOpen(false);
+        }
+      });
+
+      mobileNavQuery.addEventListener("change", () => setProfileMenuOpen(false));
+
+      // 1. Buscador (Funcionalidad nativa conservada)
+      searchInput.addEventListener("input", () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        routineCards.forEach((card) => {
+          const title = card.querySelector(".routine-title").textContent.toLowerCase();
+          const badge = card.querySelector(".badge").textContent.toLowerCase();
+          const desc = card.querySelector(".routine-desc").textContent.toLowerCase();
+
+          if (title.includes(searchTerm) || badge.includes(searchTerm) || desc.includes(searchTerm)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+
+      // 2. Inicializar Idioma
+      const savedLanguage = localStorage.getItem("selectedLanguage") || "es";
+      languageSelect.value = savedLanguage;
+      applyLanguage(savedLanguage);
+
+      // 3. Escuchar cambios locales
+      languageSelect.addEventListener("change", (e) => {
+        const lang = e.target.value;
+        localStorage.setItem("selectedLanguage", lang);
+        applyLanguage(lang);
+      });
+
+      // 4. Sincronización multi-pestaña
+      window.addEventListener("storage", (e) => {
+        if (e.key === "selectedLanguage") {
+          languageSelect.value = e.newValue;
+          applyLanguage(e.newValue);
+        }
+      });
+
+      // 5. Aplicar traducciones
+      function applyLanguage(lang) {
+        htmlElement.lang = lang;
+        const dict = translations[lang];
+
+        // Textos estándar (y etiquetas HTML incrustadas)
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (dict[key]) el.innerHTML = dict[key];
+        });
+
+        // Placeholders
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+          const key = el.getAttribute("data-i18n-placeholder");
+          if (dict[key]) el.placeholder = dict[key];
+        });
+
+        // Atributos aria-label (Botones de ajustes, crear, opciones)
+        document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+          const key = el.getAttribute("data-i18n-aria");
+          if (dict[key]) el.setAttribute("aria-label", dict[key]);
+        });
+      }
+    });
+  </script>
+</body>
+
 </html>
