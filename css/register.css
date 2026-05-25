@@ -1,0 +1,75 @@
+/*esto es para compartir css del login con el register*/
+@import url("login.css");
+
+.language-selector-top {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+.register-card {
+  max-width: 480px;
+}
+
+.register-titles .subtitle {
+  margin-bottom: 1.75rem;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.terms-group {
+  margin-top: 0.25rem;
+}
+
+.terms-group .checkbox-text {
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.terms-group .link-inline {
+  color: var(--color-primary);
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.terms-group .link-inline:hover {
+  color: var(--color-accent1-hover);
+}
+
+.register-form .btn-submit {
+  margin-top: 0.5rem;
+}
+
+.link-login {
+  color: var(--color-accent1);
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.link-login:hover {
+  color: var(--color-primary);
+}
+
+@media (max-width: 520px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .register-card {
+    max-width: 520px;
+    padding: 3.5rem 3rem;
+  }
+}

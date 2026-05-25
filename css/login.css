@@ -189,7 +189,7 @@ a {
   padding: 1rem 1.25rem;
   border-radius: var(--radius-md);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   outline: none;
   transition: all 0.2s ease;
 }

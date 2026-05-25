@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro - FYLIOS</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="stylesheet" href="../css/register.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="theme-dark">
+    <div class="language-selector-top">
+      <select id="language-select" aria-label="Idioma">
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="pt">Português</option>
+      </select>
+    </div>
+
+    <main class="login-layout">
+      <div class="login-card register-card">
+        <header class="login-header">
+          <div class="logo-group">
+            <span class="logo-box">F</span>
+            <h2>FYLIOS</h2>
+          </div>
+          <a href="login.html" class="link-back">Volver</a>
+        </header>
+
+        <div class="login-titles register-titles">
+          <span class="badge">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Registro gratuito</span>
+          </span>
+          <h1 class="title">
+            Crea tu cuenta en <span class="text-accent">FYLIOS</span>
+          </h1>
+          <p class="subtitle">
+            Empieza a planificar tus rutinas y seguir tu progresión hoy mismo
+          </p>
+        </div>
+
+        <form class="register-form" action="#" method="POST">
+          <div class="form-row">
+            <div class="input-group">
+              <label for="first-name">Nombre</label>
+              <input
+                type="text"
+                id="first-name"
+                name="first-name"
+                placeholder="Tu nombre"
+                autocomplete="given-name"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="last-name">Apellidos</label>
+              <input
+                type="text"
+                id="last-name"
+                name="last-name"
+                placeholder="Tus apellidos"
+                autocomplete="family-name"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="email">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="email@ejemplo.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="password">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Mínimo 8 caracteres"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="password-confirm">Confirmar contraseña</label>
+            <input
+              type="password"
+              id="password-confirm"
+              name="password-confirm"
+              placeholder="Repite tu contraseña"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+
+          <div class="form-options terms-group">
+            <label class="checkbox-container">
+              <input type="checkbox" class="custom-checkbox" required />
+              <span class="checkbox-text">
+                Acepto los
+                <a href="#" class="link-inline">términos y condiciones</a>
+                y la
+                <a href="#" class="link-inline">política de privacidad</a>
+              </span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-submit">Crear cuenta</button>
+
+          <div class="divider">
+            <span>o regístrate con</span>
+          </div>
+
+          <div class="social-login">
+            <button type="button" class="btn-social">
+              <i class="fa-brands fa-google"></i>
+              <span>Google</span>
+            </button>
+            <button type="button" class="btn-social">
+              <i class="fa-brands fa-apple"></i>
+              <span>Apple</span>
+            </button>
+          </div>
+        </form>
+
+        <footer class="login-footer">
+          <p>
+            ¿Ya tienes cuenta?
+            <a href="login.html" class="link-login">Inicia sesión</a>
+          </p>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
