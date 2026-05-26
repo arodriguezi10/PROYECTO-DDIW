@@ -127,6 +127,58 @@
   .sidebar__nav::-webkit-scrollbar {
     display: none;
   }
+
+  /* Ocultar goals-card dentro del sidebar en móvil */
+  @media (max-width: 1023px) {
+    .sidebar__nav .goals-card {
+      display: none;
+    }
+  }
+
+  /* Goals card flotante en móvil: aparece como panel fijo arriba a la izquierda */
+  @media (max-width: 1023px) {
+    .goals-card {
+      position: fixed;
+      top: max(0.5rem, env(safe-area-inset-top, 0px));
+      left: 0.75rem;
+      z-index: 998;
+      min-width: 10rem;
+      max-width: calc(100vw - 9rem);
+      background: var(--color-navbar-bg) !important;
+      border-radius: var(--radius-xl) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      padding: 0.65rem 0.85rem !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .goals-card .card-header h3 {
+      font-size: 0.7rem !important;
+      color: var(--color-navbar-text) !important;
+    }
+
+    .goals-card .card-header i {
+      font-size: 0.8rem;
+    }
+
+    .goals-card .card-header {
+      margin-bottom: 0.35rem;
+    }
+
+    .goals-card .goal-item {
+      padding: 0.25rem 0 !important;
+      gap: 0.5rem !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .goals-card .goal-item:last-child {
+      border-bottom: none !important;
+    }
+
+    .goals-card .goal-item span {
+      font-size: 0.72rem !important;
+      color: var(--color-navbar-text-low) !important;
+    }
+  }
   
   /* Links del sidebar */
   .sidebar__link {
@@ -868,6 +920,7 @@
     .sidebar__link span {
       max-width: 3.5rem;
     }
+    
   }
   
   @media (max-width: 380px) {
@@ -886,6 +939,10 @@
   
     .sidebar__link--active {
       box-shadow: inset 0 0 0 2px rgba(67, 24, 255, 0.45);
+    }
+
+    .goals-card {
+      max-width: calc(100vw - 7rem);
     }
   }
   
@@ -942,6 +999,11 @@
       flex: 1;
       overflow: visible;
       padding: 0;
+    }
+
+    /* Restaurar goals-card en desktop dentro del nav */
+    .sidebar__nav .goals-card {
+      display: block;
     }
   
     .sidebar__link {
