@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FYLIOS - Guardados</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="stylesheet" href="../css/routines.css" />
+    <link rel="stylesheet" href="../css/guardados.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body class="theme-light">
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="sidebar__logo">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="../assets/favicon.svg" alt="FYLIOS" style="width: 2.2rem; height: auto;" />
+                    <span>FYLIOS</span>
+                </div>
+            </div>
+
+            <div class="language-selector">
+                <select id="language-select">
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="pt">Português</option>
+                </select>
+            </div>
+
+            <nav class="sidebar__nav">
+                <a href="../index.html" class="sidebar__link">
+                    <i class="fa-solid fa-house"></i> <span data-i18n="home">Home</span>
+                </a>
+                <a href="routines.html" class="sidebar__link">
+                    <i class="fa-solid fa-clipboard-list"></i> <span data-i18n="routines">Rutinas</span>
+                </a>
+                <a href="guardados.html" class="sidebar__link sidebar__link--active">
+                    <i class="fa-solid fa-bookmark"></i> <span data-i18n="saved">Guardados</span>
+                </a>
+                <a href="video.html" class="sidebar__link">
+                    <i class="fa-solid fa-circle-play"></i> <span data-i18n="video">Vídeo</span>
+                </a>
+
+                <div class="sidebar__user-group">
+                    <button type="button" class="sidebar__link sidebar__link--user" id="profile-menu-trigger"
+                        aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu">
+                        <i class="fa-solid fa-user"></i>
+                        <span data-i18n="profile">Perfil</span>
+                    </button>
+                    <div class="sidebar-dropdown" id="profile-menu" role="menu">
+                        <a href="profile.html" class="sidebar-dropdown__item" role="menuitem"
+                            data-i18n="personalData">Datos personales</a>
+                        <div class="sidebar-dropdown__divider" role="separator"></div>
+                        <a href="login.html" class="sidebar-dropdown__item sidebar-dropdown__item--danger"
+                            role="menuitem" data-i18n="logout">Cerrar sesión</a>
+                    </div>
+                </div>
+
+                <div class="sidebar__license"
+                    style="margin-top: 1rem; text-align: center; font-size: 0.65rem; color: var(--color-navbar-text-low); padding: 0 1rem;">
+                    <a href="https://github.com/arodriguezi10/DDIW/tree/main/proyecto-DDIW/tarea-final-t2-v2"
+                        target="_blank">FYLIOS</a> © 2026 by <a href="https://github.com/arodriguezi10"
+                        target="_blank">Alejandro</a> is licensed under <a
+                        href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>
+                    <br>
+                    <a href="sitemap.html"
+                        style="color: var(--color-accent); font-weight: bold; margin-top: 0.5rem; display: block;"
+                        data-i18n="sitemap">Mapa del sitio</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="dashboard">
+            <header class="routines-header">
+                <div class="header-titles">
+                    <p class="text-caption" data-i18n="library">Biblioteca</p>
+                    <h1 class="title-main" data-i18n="savedTitle">Mis Guardados</h1>
+                </div>
+            </header>
+
+            <section class="routines-meta">
+                <p class="text-count" data-i18n="savedCount">2 elementos guardados</p>
+            </section>
+
+            <div class="saved-grid">
+                <article class="card routine-card">
+                    <div class="routine-card__header">
+                        <div class="routine-info-main">
+                            <div class="routine-title-group">
+                                <h3 class="routine-title" data-i18n="routine1Title">Empuje Pesado</h3>
+                                <span class="badge badge--primary" data-i18n="routine1Type">Hipertrofia</span>
+                            </div>
+                            <p class="routine-desc" data-i18n="routine1Desc">
+                                Enfoque en pecho, hombros y tríceps con cargas altas.
+                            </p>
+                        </div>
+                        <button class="btn-options saved-active" aria-label="Quitar de guardados">
+                            <i class="fa-solid fa-bookmark"></i>
+                        </button>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="routine-card__footer">
+                        <button class="btn-view" data-i18n="viewButton">Ver rutina</button>
+                    </div>
+                </article>
+
+                <article class="card routine-card">
+                    <div class="routine-card__header">
+                        <div class="routine-info-main">
+                            <div class="routine-title-group">
+                                <h3 class="routine-title" data-i18n="videoTitle">Técnica de Peso Muerto</h3>
+                                <span class="badge badge--neutral" data-i18n="videoType">Masterclass</span>
+                            </div>
+                            <p class="routine-desc" data-i18n="videoDesc">
+                                Técnica avanzada y errores comunes en piernas rígidas.
+                            </p>
+                        </div>
+                        <button class="btn-options saved-active" aria-label="Quitar de guardados">
+                            <i class="fa-solid fa-bookmark"></i>
+                        </button>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="routine-card__footer">
+                        <a href="video.html" class="btn-view" style="text-decoration: none; text-align: center;"
+                            data-i18n="viewVideo">Ver vídeo</a>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const translations = {
+            es: {
+                home: "Home", routines: "Rutinas", saved: "Guardados", video: "Vídeo", profile: "Perfil",
+                personalData: "Datos personales", logout: "Cerrar sesión", sitemap: "Mapa del sitio",
+                library: "Biblioteca", savedTitle: "Mis Guardados", savedCount: "2 elementos guardados",
+                routine1Title: "Empuje Pesado", routine1Type: "Hipertrofia", routine1Desc: "Enfoque en pecho, hombros y tríceps con cargas altas.",
+                viewButton: "Ver rutina", videoTitle: "Técnica de Peso Muerto", videoType: "Masterclass",
+                videoDesc: "Técnica avanzada y errores comunes en piernas rígidas.", viewVideo: "Ver vídeo"
+            },
+            fr: {
+                home: "Accueil", routines: "Routines", saved: "Enregistrés", video: "Vidéo", profile: "Profil",
+                personalData: "Données personnelles", logout: "Se déconnecter", sitemap: "Plan du site",
+                library: "Bibliothèque", savedTitle: "Mes Enregistrements", savedCount: "2 éléments enregistrés",
+                routine1Title: "Poussée Lourde", routine1Type: "Hypertrophie", routine1Desc: "Accent sur la poitrine, les épaules et les triceps.",
+                viewButton: "Voir routine", videoTitle: "Technique du Soulevé de terre", videoType: "Masterclass",
+                videoDesc: "Technique avancée et erreurs courantes.", viewVideo: "Voir vidéo"
+            },
+            pt: {
+                home: "Início", routines: "Rotinas", saved: "Salvos", video: "Vídeo", profile: "Perfil",
+                personalData: "Dados pessoais", logout: "Sair", sitemap: "Mapa do site",
+                library: "Biblioteca", savedTitle: "Meus Salvos", savedCount: "2 itens salvos",
+                routine1Title: "Empurrão Pesado", routine1Type: "Hipertrofia", routine1Desc: "Foco em peito, ombros e tríceps.",
+                viewButton: "Ver rotina", videoTitle: "Técnica de Levantamento Terra", videoType: "Masterclass",
+                videoDesc: "Técnica avançada e erros comuns.", viewVideo: "Ver vídeo"
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const languageSelect = document.getElementById("language-select");
+            const htmlElement = document.documentElement;
+
+            const savedLanguage = localStorage.getItem("selectedLanguage") || "es";
+            languageSelect.value = savedLanguage;
+            applyLanguage(savedLanguage);
+
+            languageSelect.addEventListener("change", (e) => {
+                const lang = e.target.value;
+                localStorage.setItem("selectedLanguage", lang);
+                applyLanguage(lang);
+            });
+
+            window.addEventListener("storage", (e) => {
+                if (e.key === "selectedLanguage") {
+                    languageSelect.value = e.newValue;
+                    applyLanguage(e.newValue);
+                }
+            });
+
+            function applyLanguage(lang) {
+                htmlElement.lang = lang;
+                const dict = translations[lang];
+                document.querySelectorAll("[data-i18n]").forEach((el) => {
+                    const key = el.getAttribute("data-i18n");
+                    if (dict[key]) el.innerHTML = dict[key];
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

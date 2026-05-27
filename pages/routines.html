@@ -38,6 +38,11 @@
           <i class="fa-solid fa-circle-play"></i> <span data-i18n="video">Vídeo</span>
         </a>
 
+        <a href="guardados.html" class="sidebar__link">
+          <i class="fa-solid fa-bookmark"></i>
+          <span data-i18n="saved">Guardados</span>
+        </a>
+
         <article class="card goals-card"
           style=" background: var(--color-bg-card); border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,0.05);">
           <div class="card-header" style="display: flex; justify-content: space-between; align-items: center">
@@ -157,9 +162,14 @@
                     <span><i class="fa-regular fa-clock"></i> <span data-i18n="routine1Duration">60 min</span></span>
                   </div>
                 </div>
-                <button class="btn-options" aria-label="Opciones" data-i18n-aria="options">
-                  <i class="fa-solid fa-ellipsis-vertical"></i>
-                </button>
+                <div style="display: flex; gap: 0.35rem; align-items: center;">
+                  <button class="btn-options" aria-label="Guardar" data-i18n-aria="save">
+                    <i class="fa-regular fa-bookmark"></i>
+                  </button>
+                  <button class="btn-options" aria-label="Opciones" data-i18n-aria="options">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                  </button>
+                </div>
               </div>
 
               <div class="divider"></div>
@@ -205,9 +215,14 @@
                     <span><i class="fa-regular fa-clock"></i> <span data-i18n="routine2Duration">50 min</span></span>
                   </div>
                 </div>
-                <button class="btn-options" aria-label="Opciones" data-i18n-aria="options">
-                  <i class="fa-solid fa-ellipsis-vertical"></i>
-                </button>
+                <div style="display: flex; gap: 0.35rem; align-items: center;">
+                  <button class="btn-options" aria-label="Guardar" data-i18n-aria="save">
+                    <i class="fa-regular fa-bookmark"></i>
+                  </button>
+                  <button class="btn-options" aria-label="Opciones" data-i18n-aria="options">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                  </button>
+                </div>
               </div>
 
               <div class="divider"></div>
@@ -319,6 +334,8 @@
         upsellTitle_html: "Crear <br /> progresión",
         eliteBadge_html: "<i class=\"fa-solid fa-gem\"></i> ÉLITE",
         upsellDesc: "Planifica la evolución de cargas semana a semana",
+        saved: "Guardados",
+        save: "Guardar",
       },
       fr: {
         home: "Accueil",
@@ -359,6 +376,8 @@
         upsellTitle_html: "Créer une <br /> progression",
         eliteBadge_html: "<i class=\"fa-solid fa-gem\"></i> ÉLITE",
         upsellDesc: "Planifiez l'évolution des charges semaine après semaine",
+        saved: "Sauvegardés",
+        save: "Sauvegarder",
       },
       pt: {
         home: "Início",
@@ -399,6 +418,8 @@
         upsellTitle_html: "Criar <br /> progressão",
         eliteBadge_html: "<i class=\"fa-solid fa-gem\"></i> ÉLITE",
         upsellDesc: "Planeje a evolução de cargas semana a semana",
+        saved: "Salvos",
+        save: "Salvar",
       },
     };
 
